@@ -4,7 +4,8 @@ Main entry point for the adaptive questionnaire backend.
 """
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from crosscures.controllers import checkin_router
+from fastapi.staticfiles import StaticFiles
+from controllers import checkin_router
 
 
 app = FastAPI(
@@ -25,11 +26,14 @@ app.add_middleware(
 # Register routers
 app.include_router(checkin_router)
 
+# This mounts your views folder so FastAPI serves the HTML/JS/CSS
+app.mount("/", StaticFiles(directory="views", html=True), name="views")
+
 
 @app.on_event("startup")
 async def startup():
     """Application startup event"""
-    from crosscures.controllers.checkin import initialize_provider
+    from controllers.checkin import initialize_provider
     initialize_provider()
     print("[STARTUP] Application initialized with MockPatientDataProvider by default")
 
