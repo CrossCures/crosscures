@@ -1,32 +1,49 @@
-# Python-generated files
-__pycache__/
-*.py[oc]
-build/
-dist/
-wheels/
-*.egg-info
-.mypy_cache
+# See https://docs.github.com/en/get-started/getting-started-with-git/ignoring-files for more about ignoring files.
 
-# Virtual environments
-.venv
+# compiled output
+dist
+tmp
+out-tsc
+*.tsbuildinfo
+.expo
+.expo-shared
 
-# OS cache
+# dependencies
+node_modules
+
+# IDEs and editors
+/.idea
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# misc
+/.sass-cache
+/connect.lock
+/coverage
+/libpeerconnection.log
+npm-debug.log
+yarn-error.log
+testem.log
+/typings
+
+# System Files
 .DS_Store
+Thumbs.db
 
-# Environment files (secrets)
-.env
-.env.local
-.env.*.local
+.cursor/rules/nx-rules.mdc
+.github/instructions/nx.instructions.md
 
-# Epic OAuth tokens (sensitive)
-.epic_tokens.json
-
-# Repo files
-data/*
-!data/.gitkeep
-misc/*
-crosscures_v2/backend/crosscures.db
-crosscures_v2/frontend/.next
-crosscures_v2/frontend/node_modules
-crosscures_v2/frontend/tsconfig.tsbuildinfo
-crosscures_v2/offline_eval/results
+# Replit
+.cache/
+.local/
