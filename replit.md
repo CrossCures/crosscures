@@ -1,44 +1,60 @@
-# [Project name]
+# CrossCures — AI Health Companion
 
-_Replace the heading above with the project's name, and this line with one sentence describing what this app does for users._
+AI-powered health platform for patients and physicians: adaptive symptom check-ins, voice-enabled clinic sessions, therapy monitoring, and AI-generated pre-visit briefs.
 
 ## Run & Operate
 
-- `pnpm --filter @workspace/api-server run dev` — run the API server (port 5000)
+- `pnpm --filter @workspace/crosscures run dev` — run the frontend (port auto-assigned)
 - `pnpm run typecheck` — full typecheck across all packages
 - `pnpm run build` — typecheck + build all packages
-- `pnpm --filter @workspace/api-spec run codegen` — regenerate API hooks and Zod schemas from the OpenAPI spec
-- `pnpm --filter @workspace/db run push` — push DB schema changes (dev only)
-- Required env: `DATABASE_URL` — Postgres connection string
+- Required env: `VITE_API_URL` — FastAPI backend base URL (e.g. `https://your-api.example.com`)
 
 ## Stack
 
 - pnpm workspaces, Node.js 24, TypeScript 5.9
-- API: Express 5
-- DB: PostgreSQL + Drizzle ORM
-- Validation: Zod (`zod/v4`), `drizzle-zod`
-- API codegen: Orval (from OpenAPI spec)
-- Build: esbuild (CJS bundle)
+- Frontend: React + Vite, Wouter (routing), Zustand (state), Axios (HTTP)
+- Styling: Tailwind CSS v4, custom CrossCures design tokens
+- Auth: JWT stored in localStorage via Zustand persist
+- Backend: FastAPI (Python) — external, connected via `VITE_API_URL`
+- TTS: Cartesia API (optional, configured via `VITE_CARTESIA_*` env vars)
 
 ## Where things live
 
-_Populate as you build — short repo map plus pointers to the source-of-truth file for DB schema, API contracts, theme files, etc._
+- `artifacts/crosscures/` — React + Vite frontend
+  - `src/App.tsx` — root router (Wouter), all page routes
+  - `src/lib/api.ts` — Axios client + all API call functions
+  - `src/lib/store.ts` — Zustand auth + app store
+  - `src/lib/cartesia.ts` — TTS synthesis + browser STT helpers
+  - `src/lib/utils.ts` — date formatting, color helpers, cn()
+  - `src/index.css` — CrossCures design system (CSS vars, utility classes)
+  - `src/components/PatientLayout.tsx` — sidebar nav for patients
+  - `src/components/PhysicianLayout.tsx` — dark sidebar nav for physicians
+  - `src/pages/` — all page components (login, register, patient/*, physician/*)
 
 ## Architecture decisions
 
-_Populate as you build — non-obvious choices a reader couldn't infer from the code (3-5 bullets)._
+- **No generated API hooks** — this project calls a FastAPI backend directly via Axios; the monorepo's Orval codegen is not used since the backend contract is not owned here
+- **Wouter for routing** — lightweight, no React Router needed; `useLocation()` hook for imperative navigation
+- **Zustand with persist** — auth state (user + JWT token) survives page refresh via localStorage
+- **Browser SpeechRecognition** — wake-word detection ("Maria") for hands-free clinic/previsit/report sessions; no external STT required
+- **Cartesia TTS** — optional; if `VITE_CARTESIA_API_KEY` is set, Maria speaks responses aloud; app works fully without it
 
 ## Product
 
-_Describe the high-level user-facing capabilities of this app once they exist._
+- **Patient Portal**: Home dashboard, daily adaptive check-in, medication tracking, health record upload (FHIR), pre-visit call scheduling, voice-enabled clinic session with Maria, health condition reporting
+- **Physician Portal**: Dashboard with unread briefs and alerts, patient list, cited AI-generated pre-visit briefs, therapy deviation alerts with severity levels
 
 ## User preferences
 
-_Populate as you build — explicit user instructions worth remembering across sessions._
+- Backend is FastAPI Python (not Express/Node) — never create Express routes for this project
+- Set `VITE_API_URL` to point to the running Python backend
 
 ## Gotchas
 
-_Populate as you build — sharp edges, "always run X before Y" rules._
+- The frontend is entirely separate from the FastAPI backend — it must have `VITE_API_URL` set to work
+- Cartesia TTS is optional: if `VITE_CARTESIA_API_KEY` is not set, voice synthesis is silently skipped
+- Browser SpeechRecognition only works in Chrome/Edge — no fallback in other browsers
+- `useLocation()` from wouter is used for imperative navigation (not `useRouter`)
 
 ## Pointers
 
