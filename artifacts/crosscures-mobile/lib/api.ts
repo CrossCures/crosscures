@@ -1,7 +1,21 @@
-const API_URL = process.env.EXPO_PUBLIC_API_URL || "";
+function resolveDefaultApiUrl(): string {
+  const explicit = process.env.EXPO_PUBLIC_API_URL;
+  if (explicit && explicit.trim()) return explicit.replace(/\/+$/, "");
+  const domain = process.env.EXPO_PUBLIC_DOMAIN;
+  if (domain && domain.trim()) {
+    const host = domain.replace(/^https?:\/\//, "").replace(/\/+$/, "");
+    return `https://${host}/api`;
+  }
+  return "";
+}
 
+let API_URL = resolveDefaultApiUrl();
 let authTokenGetter: (() => string | null) | null = null;
 let unauthorizedHandler: (() => void) | null = null;
+
+export function setApiUrl(url: string) {
+  API_URL = url.replace(/\/+$/, "");
+}
 
 export function setAuthTokenGetter(getter: () => string | null) {
   authTokenGetter = getter;
@@ -21,7 +35,9 @@ async function request<T = any>(
   options: { body?: any; query?: Record<string, any>; formData?: FormData } = {}
 ): Promise<T> {
   if (!API_URL) {
-    throw new Error("EXPO_PUBLIC_API_URL is not set. Please configure it in your environment.");
+    throw new Error(
+      "API URL is not configured. Set EXPO_PUBLIC_API_URL to your FastAPI backend (or rely on EXPO_PUBLIC_DOMAIN for the default)."
+    );
   }
 
   let url = `${API_URL}${path}`;
