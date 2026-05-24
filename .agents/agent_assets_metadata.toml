@@ -1,0 +1,8 @@
+uploads = []
+outputs = []
+
+[[generated]]
+id = "MbZSSrloNiaFXkQqat1GF"
+uri = "file://artifacts/crosscures-mobile/assets/images/icon.png"
+type = "image"
+title = "crosscures app icon"
