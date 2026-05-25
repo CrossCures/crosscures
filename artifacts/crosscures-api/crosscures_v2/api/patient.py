@@ -66,7 +66,22 @@ def revoke_consent(req: ConsentRequest, user: UserDB = Depends(require_patient),
     store = ConsentStore(db)
     record = store.revoke(user.id, req.action)
     event_bus.emit(event_bus.make_event(EventType.CONSENT_REVOKED, user.id, EventSource.WEB, {"action": req.action.value}), db)
-    return {"consent": record.model_dump()}
+
+    purged = None
+    if req.action == ConsentAction.WEARABLE_SYNC:
+        from crosscures_v2.api.wearables import purge_wearable_data
+        purged = purge_wearable_data(user.id, db)
+        event_bus.emit(
+            event_bus.make_event(
+                EventType.WEARABLE_DATA_PURGED, user.id, EventSource.WEB,
+                payload={"trigger": "consent_revoke", **purged},
+            ), db,
+        )
+
+    out = {"consent": record.model_dump()}
+    if purged is not None:
+        out["purged"] = purged
+    return out
 
 
 # ── Health Records ────────────────────────────────────────────────────────────

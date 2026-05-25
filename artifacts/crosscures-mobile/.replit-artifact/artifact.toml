@@ -13,7 +13,7 @@ version = "1.0.0"
 ensurePreviewReachable = "/status"
 name = "expo"
 paths = [ "/mobile/" ]
-localPort = 24563
+localPort = 8099
 
 [services.development]
 run = "pnpm --filter @workspace/crosscures-mobile run dev"
@@ -23,5 +23,5 @@ build = [ "pnpm", "--filter", "@workspace/crosscures-mobile", "run", "build" ]
 run = [ "pnpm", "--filter", "@workspace/crosscures-mobile", "run", "serve" ]
 
 [services.env]
-PORT = "24563"
+PORT = "8099"
 BASE_PATH = "/mobile/"

@@ -15,10 +15,42 @@
     },
     "ios": {
       "supportsTablet": false,
-      "bundleIdentifier": "com.replit.crosscuresmobile"
+      "bundleIdentifier": "com.replit.crosscuresmobile",
+      "infoPlist": {
+        "NSHealthShareUsageDescription": "CrossCures reads your Health data (heart rate, sleep, activity, blood oxygen, and other vital signs you choose to share) so your care team can spot trends, generate accurate pre-visit briefs, and detect changes in how a therapy is working.",
+        "NSHealthUpdateUsageDescription": "CrossCures may write summary observations from your visits back to the Health app when you ask it to.",
+        "UIBackgroundModes": ["fetch", "processing"]
+      },
+      "entitlements": {
+        "com.apple.developer.healthkit": true,
+        "com.apple.developer.healthkit.background-delivery": true
+      }
     },
     "android": {
-      "package": "com.replit.crosscuresmobile"
+      "package": "com.replit.crosscuresmobile",
+      "permissions": [
+        "android.permission.health.READ_STEPS",
+        "android.permission.health.READ_DISTANCE",
+        "android.permission.health.READ_ACTIVE_CALORIES_BURNED",
+        "android.permission.health.READ_BASAL_METABOLIC_RATE",
+        "android.permission.health.READ_FLOORS_CLIMBED",
+        "android.permission.health.READ_HEART_RATE",
+        "android.permission.health.READ_RESTING_HEART_RATE",
+        "android.permission.health.READ_HEART_RATE_VARIABILITY",
+        "android.permission.health.READ_OXYGEN_SATURATION",
+        "android.permission.health.READ_RESPIRATORY_RATE",
+        "android.permission.health.READ_BLOOD_PRESSURE",
+        "android.permission.health.READ_BLOOD_GLUCOSE",
+        "android.permission.health.READ_BODY_TEMPERATURE",
+        "android.permission.health.READ_WEIGHT",
+        "android.permission.health.READ_SLEEP",
+        "android.permission.health.READ_EXERCISE",
+        "android.permission.health.READ_NUTRITION",
+        "android.permission.health.READ_HYDRATION",
+        "android.permission.health.READ_MINDFULNESS",
+        "android.permission.health.READ_MENSTRUATION",
+        "android.permission.health.READ_HEALTH_DATA_IN_BACKGROUND"
+      ]
     },
     "web": {
       "favicon": "./assets/images/icon.png"
@@ -31,7 +63,30 @@
         }
       ],
       "expo-font",
-      "expo-web-browser"
+      "expo-web-browser",
+      [
+        "@kingstinct/react-native-healthkit",
+        {
+          "healthSharePermission": "CrossCures reads your Health data so your care team can spot trends and detect changes in how a therapy is working.",
+          "healthUpdatePermission": "CrossCures may write summary observations back to Health when you ask it to.",
+          "backgroundDelivery": true,
+          "backgroundObserverDeliveryEnabled": true
+        }
+      ],
+      "react-native-health-connect",
+      [
+        "expo-build-properties",
+        {
+          "ios": {
+            "deploymentTarget": "16.0"
+          },
+          "android": {
+            "minSdkVersion": 28,
+            "compileSdkVersion": 34,
+            "targetSdkVersion": 34
+          }
+        }
+      ]
     ],
     "experiments": {
       "typedRoutes": true,
