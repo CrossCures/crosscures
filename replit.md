@@ -5,21 +5,34 @@ AI-powered health platform for patients and physicians: adaptive symptom check-i
 ## Run & Operate
 
 - `pnpm --filter @workspace/crosscures run dev` — run the frontend (port auto-assigned)
+- `cd artifacts/crosscures-api && uvicorn main:app --host 0.0.0.0 --port 8000` — run the FastAPI backend manually
+- `cd artifacts/crosscures-api && python seed_demo.py` — seed demo accounts (patient@demo.com / physician@demo.com, password: demo1234)
 - `pnpm run typecheck` — full typecheck across all packages
 - `pnpm run build` — typecheck + build all packages
-- Required env: `VITE_API_URL` — FastAPI backend base URL (e.g. `https://your-api.example.com`)
+- `VITE_API_URL` is set to `""` (empty string = relative URLs); Vite proxies `/v1/*` to `http://localhost:8000` in dev
+- `EXPO_PUBLIC_API_URL` is set to the full Replit dev domain URL for mobile
 
 ## Stack
 
-- pnpm workspaces, Node.js 24, TypeScript 5.9
+- pnpm workspaces, Node.js 24, TypeScript 5.9, Python 3.11
 - Frontend: React + Vite, Wouter (routing), Zustand (state), Axios (HTTP)
+- Mobile: Expo (React Native), Expo Router, React Context + AsyncStorage
 - Styling: Tailwind CSS v4, custom CrossCures design tokens
-- Auth: JWT stored in localStorage via Zustand persist
-- Backend: FastAPI (Python) — external, connected via `VITE_API_URL`
+- Auth: JWT stored in localStorage via Zustand persist (web); AsyncStorage (mobile)
+- Backend: FastAPI (Python) — `artifacts/crosscures-api/`, runs on port 8000, routed via `/v1/*`
+- Database: PostgreSQL (Replit-managed, `DATABASE_URL` secret); SQLAlchemy ORM + auto-migrate on startup
 - TTS: Cartesia API (optional, configured via `VITE_CARTESIA_*` env vars)
+- LLM: Anthropic Claude (configured via `ANTHROPIC_API_KEY` secret)
 
 ## Where things live
 
+- `artifacts/crosscures-api/` — FastAPI Python backend (port 8000)
+  - `crosscures_v2/app.py` — FastAPI app, CORS, startup hook
+  - `crosscures_v2/config.py` — pydantic-settings (reads `DATABASE_URL`, `ANTHROPIC_API_KEY`, `CARTESIA_API_KEY`, etc.)
+  - `crosscures_v2/db_models.py` — SQLAlchemy ORM models (users, prescriptions, sessions, briefs, alerts, …)
+  - `crosscures_v2/api/` — route handlers: `users.py` (auth), `patient.py`, `physician.py`, `voice.py`
+  - `crosscures_v2/stages/` — LLM session managers (clinic, previsit, health report, brief generator, therapy detector)
+  - `seed_demo.py` — seeds patient@demo.com + physician@demo.com with demo data
 - `artifacts/crosscures/` — React + Vite frontend
   - `src/App.tsx` — root router (Wouter), all page routes
   - `src/lib/api.ts` — Axios client + all API call functions
@@ -51,7 +64,10 @@ AI-powered health platform for patients and physicians: adaptive symptom check-i
 
 ## Gotchas
 
-- The frontend is entirely separate from the FastAPI backend — it must have `VITE_API_URL` set to work
+- The FastAPI backend is in `artifacts/crosscures-api/` and must be running (workflow: `artifacts/api-server: FastAPI`) for the app to work
+- `VITE_API_URL=""` (empty string) — Vite's dev server proxies `/v1/*` → `http://localhost:8000`; this means the backend must be running locally
+- `bcrypt==3.2.2` is pinned — passlib 1.7.4 is incompatible with bcrypt 4.x (breaks on init)
+- AI features (clinic chat, briefs, therapy detection) require `ANTHROPIC_API_KEY` to be set as a secret
 - Cartesia TTS is optional: if `VITE_CARTESIA_API_KEY` is not set, voice synthesis is silently skipped
 - Browser SpeechRecognition only works in Chrome/Edge — no fallback in other browsers
 - `useLocation()` from wouter is used for imperative navigation (not `useRouter`)

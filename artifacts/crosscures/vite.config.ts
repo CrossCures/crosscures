@@ -66,6 +66,11 @@ export default defineConfig({
     fs: {
       strict: true,
     },
+    proxy: {
+      "/v1": { target: "http://localhost:8000", changeOrigin: true },
+      "/health": { target: "http://localhost:8000", changeOrigin: true },
+      "/docs": { target: "http://localhost:8000", changeOrigin: true },
+    },
   },
   preview: {
     port,

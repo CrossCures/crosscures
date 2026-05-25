@@ -4,7 +4,7 @@ function resolveDefaultApiUrl(): string {
   const domain = process.env.EXPO_PUBLIC_DOMAIN;
   if (domain && domain.trim()) {
     const host = domain.replace(/^https?:\/\//, "").replace(/\/+$/, "");
-    return `https://${host}/api`;
+    return `https://${host}`;
   }
   return "";
 }
