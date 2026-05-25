@@ -21,8 +21,11 @@ class Settings(BaseSettings):
     cartesia_api_key: str = ""
     cartesia_version: str = "2026-03-01"
     cartesia_tts_model: str = "sonic-3"
-    cartesia_stt_model: str = "ink-whisper"
     cartesia_voice_id: str = "694f9389-aac1-45b6-b726-9d9369183238"
+
+    # STT: MedASR (local HF pipeline)
+    medasr_model_id: str = "google/medasr"
+    huggingface_token: str = ""
 
     frontend_url: str = "http://localhost:3000"
     consent_version: str = "1.0.0"

@@ -1,12 +1,15 @@
-"""Voice API routes — proxy for Cartesia STT/TTS."""
+"""Voice API routes — MedASR STT, Cartesia TTS."""
+import asyncio
+
 import httpx
 from fastapi import APIRouter, Depends, HTTPException, UploadFile, File
-from fastapi.responses import StreamingResponse, Response
+from fastapi.responses import Response
 from pydantic import BaseModel
 
 from crosscures_v2.config import get_settings
 from crosscures_v2.db_models import UserDB
 from crosscures_v2.api.auth import get_current_user
+from crosscures_v2.stt_medasr import transcribe_bytes as medasr_transcribe
 
 router = APIRouter(prefix="/v1/voice", tags=["voice"])
 settings = get_settings()
@@ -19,24 +22,22 @@ async def transcribe_audio(
     audio: UploadFile = File(...),
     user: UserDB = Depends(get_current_user),
 ):
-    """Transcribe audio using Cartesia ink-whisper STT."""
+    """Transcribe audio using MedASR (local HF pipeline)."""
     audio_bytes = await audio.read()
+    if not audio_bytes:
+        raise HTTPException(status_code=400, detail="empty audio upload")
 
-    async with httpx.AsyncClient(timeout=30.0) as client:
-        resp = await client.post(
-            f"{CARTESIA_BASE}/audio/transcriptions",
-            headers={
-                "X-API-Key": settings.cartesia_api_key,
-                "Cartesia-Version": settings.cartesia_version,
-            },
-            files={"file": (audio.filename or "audio.webm", audio_bytes, audio.content_type or "audio/webm")},
-            data={"model": settings.cartesia_stt_model},
+    try:
+        text = await asyncio.to_thread(
+            medasr_transcribe,
+            audio_bytes,
+            settings.medasr_model_id,
+            settings.huggingface_token,
         )
+    except Exception as exc:
+        raise HTTPException(status_code=500, detail=f"MedASR error: {exc}") from exc
 
-    if resp.status_code != 200:
-        raise HTTPException(status_code=resp.status_code, detail=f"Cartesia STT error: {resp.text}")
-
-    return resp.json()
+    return {"text": text}
 
 
 class TTSRequest(BaseModel):

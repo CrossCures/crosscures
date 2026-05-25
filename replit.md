@@ -22,6 +22,7 @@ AI-powered health platform for patients and physicians: adaptive symptom check-i
 - Backend: FastAPI (Python) — `artifacts/crosscures-api/`, runs on port 8000, routed via `/v1/*`
 - Database: PostgreSQL (Replit-managed, `DATABASE_URL` secret); SQLAlchemy ORM + auto-migrate on startup
 - TTS: Cartesia API (optional, configured via `VITE_CARTESIA_*` env vars)
+- STT: MedASR (Hugging Face `google/medasr` pipeline, runs in-process; configurable via `MEDASR_MODEL_ID` / `HUGGINGFACE_TOKEN`)
 - LLM: Anthropic Claude (configured via `ANTHROPIC_API_KEY` secret)
 
 ## Where things live
