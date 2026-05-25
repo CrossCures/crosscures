@@ -294,3 +294,35 @@ class WearableSampleDB(Base):
     end_date = Column(DateTime, nullable=False)
     source_name = Column(String, nullable=True)
     created_at = Column(DateTime, default=datetime.utcnow)
+
+
+class WorkoutSampleDB(Base):
+    __tablename__ = "workout_samples"
+
+    id = Column(String, primary_key=True, default=gen_uuid)
+    sample_id = Column(String, unique=True, nullable=False)
+    patient_id = Column(String, ForeignKey("users.id"), nullable=False)
+    workout_type = Column(String, nullable=False)
+    start_date = Column(DateTime, nullable=False)
+    end_date = Column(DateTime, nullable=False)
+    duration_seconds = Column(Float, nullable=False)
+    total_energy_kcal = Column(Float, nullable=True)
+    total_distance_m = Column(Float, nullable=True)
+    average_heart_rate = Column(Float, nullable=True)
+    source_name = Column(String, nullable=True)
+    metadata_json = Column(Text, nullable=True)
+    created_at = Column(DateTime, default=datetime.utcnow)
+
+
+class SleepSegmentDB(Base):
+    __tablename__ = "sleep_segments"
+
+    id = Column(String, primary_key=True, default=gen_uuid)
+    sample_id = Column(String, unique=True, nullable=False)
+    patient_id = Column(String, ForeignKey("users.id"), nullable=False)
+    session_id = Column(String, nullable=True, index=True)
+    stage = Column(String, nullable=False)
+    start_date = Column(DateTime, nullable=False)
+    end_date = Column(DateTime, nullable=False)
+    source_name = Column(String, nullable=True)
+    created_at = Column(DateTime, default=datetime.utcnow)
