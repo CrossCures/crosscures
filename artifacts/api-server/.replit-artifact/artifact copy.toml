@@ -1,0 +1,54 @@
+kind = "api"
+<<<<<<< Updated upstream
+previewPath = "/v1"
+title = "CrossCures API"
+=======
+previewPath = "/api" # TODO - should be excluded from preview in the first place
+title = "API Server"
+>>>>>>> Stashed changes
+version = "1.0.0"
+id = "3B4_FFSkEVBkAeYMFRJ2e"
+
+[[services]]
+<<<<<<< Updated upstream
+localPort = 8000
+name = "FastAPI"
+paths = ["/v1", "/health", "/docs", "/redoc"]
+
+[services.development]
+run = "cd /home/runner/workspace/artifacts/crosscures-api && PORT=8000 uvicorn main:app --host 0.0.0.0 --port 8000"
+
+[services.production]
+
+[services.production.run]
+args = ["bash", "-c", "cd /home/runner/workspace/artifacts/crosscures-api && uvicorn main:app --host 0.0.0.0 --port $PORT"]
+
+[services.production.run.env]
+PORT = "8000"
+=======
+localPort = 8080
+name = "API Server"
+paths = ["/api"]
+
+[services.development]
+run = "pnpm --filter @workspace/api-server run dev"
+
+[services.production]
+
+[services.production.build]
+args = ["pnpm", "--filter", "@workspace/api-server", "run", "build"]
+
+[services.production.build.env]
+NODE_ENV = "production"
+
+[services.production.run]
+# we don't run through pnpm to make startup faster in production
+args = ["node", "--enable-source-maps", "artifacts/api-server/dist/index.mjs"]
+
+[services.production.run.env]
+PORT = "8080"
+NODE_ENV = "production"
+
+[services.production.health.startup]
+path = "/api/healthz"
+>>>>>>> Stashed changes
