@@ -6,6 +6,7 @@ import { patientApi } from "@/lib/api";
 import { useAuthStore } from "@/lib/store";
 import { cn, formatDate } from "@/lib/utils";
 import PatientLayout from "@/components/PatientLayout";
+import FastenConnect from "@/components/FastenConnect";
 
 const RESOURCE_TYPES = ["All", "Condition", "MedicationRequest", "Observation", "DiagnosticReport", "AllergyIntolerance", "Procedure", "Encounter", "DocumentReference"];
 
@@ -115,7 +116,19 @@ export default function RecordsPage() {
           </div>
         )}
 
-        {/* Upload area */}
+        {/* Connect via Fasten — primary path */}
+        <FastenConnect onComplete={() => {
+          // Records arrive asynchronously via webhook → ingest. Poll for ~90s.
+          let attempts = 0;
+          const interval = setInterval(async () => {
+            attempts += 1;
+            await fetchRecords();
+            if (attempts >= 30) clearInterval(interval);
+          }, 3000);
+        }} />
+
+        {/* Upload area — fallback */}
+        <p className="text-xs text-slate-400 mb-2 ml-1">Or upload manually:</p>
         <div
           className="border-2 border-dashed border-slate-200 rounded-2xl p-8 mb-6 text-center cursor-pointer hover:border-crosscure-300 hover:bg-crosscure-50/50 transition-all"
           onClick={() => fileRef.current?.click()}

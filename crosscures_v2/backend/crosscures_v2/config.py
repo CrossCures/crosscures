@@ -18,9 +18,14 @@ class Settings(BaseSettings):
     frontend_url: str = "http://localhost:3000"
     consent_version: str = "1.0.0"
 
+    fasten_public_id: str = ""
+    fasten_private_key: str = ""
+    fasten_api_base: str = "https://api.connect.fastenhealth.com/v1"
+
     class Config:
         env_file = ".env"
         env_file_encoding = "utf-8"
+        extra = "ignore"
 
 
 @lru_cache()

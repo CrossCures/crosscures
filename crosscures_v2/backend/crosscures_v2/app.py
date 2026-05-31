@@ -9,6 +9,7 @@ from crosscures_v2.api.users import router as users_router
 from crosscures_v2.api.patient import router as patient_router
 from crosscures_v2.api.physician import router as physician_router
 from crosscures_v2.api.voice import router as voice_router
+from crosscures_v2.api.fasten_webhook import router as fasten_webhook_router
 
 settings = get_settings()
 
@@ -59,6 +60,7 @@ app.include_router(users_router)
 app.include_router(patient_router)
 app.include_router(physician_router)
 app.include_router(voice_router)
+app.include_router(fasten_webhook_router)
 
 
 @app.get("/health")
