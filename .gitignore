@@ -10,6 +10,7 @@ out-tsc
 
 # dependencies
 node_modules
+crosscures_v2/frontend/.next
 
 # IDEs and editors
 /.idea
@@ -36,6 +37,7 @@ npm-debug.log
 yarn-error.log
 testem.log
 /typings
+*.pyc
 
 # System Files
 .DS_Store
@@ -47,3 +49,8 @@ Thumbs.db
 # Replit
 .cache/
 .local/
+
+# Sensitive Files
+.env
+
+data/

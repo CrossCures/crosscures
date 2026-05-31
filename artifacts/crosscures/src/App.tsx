@@ -22,6 +22,7 @@ import BriefsPage from "@/pages/physician/briefs";
 import BriefDetailPage from "@/pages/physician/brief-detail";
 import AlertsPage from "@/pages/physician/alerts";
 import AlertDetailPage from "@/pages/physician/alert-detail";
+import CallbackPage from "@/pages/callback";
 import NotFound from "@/pages/not-found";
 
 const queryClient = new QueryClient({
@@ -53,6 +54,7 @@ function Router() {
       <Route path="/" component={RedirectRoot} />
       <Route path="/login" component={LoginPage} />
       <Route path="/register" component={RegisterPage} />
+      <Route path="/callback" component={CallbackPage} />
 
       {/* Patient routes */}
       <Route path="/patient/home" component={PatientHome} />

@@ -5,6 +5,7 @@ import { patientApi } from "@/lib/api";
 import { useAuthStore } from "@/lib/store";
 import { cn, formatDate } from "@/lib/utils";
 import PatientLayout from "@/components/PatientLayout";
+import FastenConnect from "@/components/FastenConnect";
 
 const RESOURCE_ICONS: Record<string, string> = {
   Condition: "🫀",
@@ -79,6 +80,16 @@ export default function RecordsPage() {
             </button>
           </div>
         </div>
+
+        {/* Connect via Fasten — primary path */}
+        <FastenConnect onComplete={() => {
+          let attempts = 0;
+          const interval = setInterval(async () => {
+            attempts += 1;
+            loadRecords();
+            if (attempts >= 30) clearInterval(interval);
+          }, 3000);
+        }} />
 
         <div className="flex flex-col sm:flex-row gap-3 mb-6">
           <div className="relative flex-1">
