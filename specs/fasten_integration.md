@@ -95,11 +95,11 @@ All backend code lives under `artifacts/crosscures-api/`.
 
 | Path | Purpose |
 |------|---------|
-| `crosscures_v2/api/fasten_webhook.py` | Webhook receiver. Routes by `event.type`. Holds in-memory `_TASK_TO_PATIENT` mapping. |
-| `crosscures_v2/ingestion/fasten_client.py` | Outbound HTTP client for Fasten Connect. Basic auth, `request_ehi_export`, `get_export_status`, `download_export_file`. |
-| `crosscures_v2/ingestion/service.py` | Unchanged -- existing `ingest_fhir_json()` is the integration entry point. |
-| `crosscures_v2/config.py` | Reads `FASTEN_PUBLIC_ID`, `FASTEN_PRIVATE_KEY`, `FASTEN_API_BASE` from `.env`. `extra = "ignore"` so unrelated env vars don't crash settings. |
-| `crosscures_v2/app.py` | Mounts the fasten webhook router. |
+| `artifacts/crosscures-api/crosscures_v2/api/fasten_webhook.py` | Webhook receiver. Routes by `event.type`. Holds in-memory `_TASK_TO_PATIENT` mapping. |
+| `artifacts/crosscures-api/crosscures_v2/ingestion/fasten_client.py` | Outbound HTTP client for Fasten Connect. Basic auth, `request_ehi_export`, `get_export_status`, `download_export_file`. |
+| `artifacts/crosscures-api/crosscures_v2/ingestion/service.py` | Unchanged -- existing `ingest_fhir_json()` is the integration entry point. |
+| `artifacts/crosscures-api/crosscures_v2/config.py` | Reads `FASTEN_PUBLIC_ID`, `FASTEN_PRIVATE_KEY`, `FASTEN_API_BASE` from `.env`. `extra = "ignore"` so unrelated env vars don't crash settings. |
+| `artifacts/crosscures-api/crosscures_v2/app.py` | Mounts the fasten webhook router. |
 
 ### Frontend
 
@@ -108,9 +108,9 @@ Vite + React with Wouter for routing (not Next.js).
 
 | Path | Purpose |
 |------|---------|
-| `src/components/FastenConnect.tsx` | Loads Fasten CDN (CSS + ES module JS). Renders `<fasten-stitch-element>` with patient's user.id as `external-id`. Listens for `eventBus`, updates status banner. Reads `VITE_FASTEN_PUBLIC_ID` via `import.meta.env`. |
-| `src/pages/patient/records.tsx` | Embeds `<FastenConnect>` above the search/filter area. Polls records every 3s for 90s after `widget.complete`. |
-| `src/pages/callback.tsx` | Fallback landing page for Fasten's registered Redirect URL. Redirects to `/patient/records` via Wouter's `useLocation`. Rarely hit -- the widget is fully modal. |
+| `artifacts/crosscures/src/components/FastenConnect.tsx` | Loads Fasten CDN (CSS + ES module JS). Renders `<fasten-stitch-element>` with patient's user.id as `external-id`. Listens for `eventBus`, updates status banner. Reads `VITE_FASTEN_PUBLIC_ID` via `import.meta.env`. |
+| `artifacts/crosscures/src/pages/patient/records.tsx` | Embeds `<FastenConnect>` above the search/filter area. Polls records every 3s for 90s after `widget.complete`. |
+| `artifacts/crosscures/src/pages/callback.tsx` | Fallback landing page for Fasten's registered Redirect URL. Redirects to `/patient/records` via Wouter's `useLocation`. Rarely hit -- the widget is fully modal. |
 
 ## Setup checklist (new dev)
 
@@ -298,7 +298,7 @@ UI is a TODO -- see below.
 Roughly ordered by priority for taking this past demo:
 
 1. **Persist `task_id -> patient_id` mapping in DB** (currently
-   `_TASK_TO_PATIENT` is an in-memory dict in `fasten_webhook.py`).
+   `_TASK_TO_PATIENT` is an in-memory dict in `artifacts/crosscures-api/crosscures_v2/api/fasten_webhook.py`).
    Restarts lose the mapping. Add an `EHRConnectionDB` table with
    `(patient_id, org_connection_id, task_id, vendor, tenant, status,
    last_synced_at)` and look up there instead. This is also what powers
