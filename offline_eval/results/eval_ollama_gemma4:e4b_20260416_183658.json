@@ -1,0 +1,309 @@
+{
+  "run_timestamp": "20260416_183658",
+  "config": {
+    "provider": "ollama",
+    "model": "gemma4:e4b",
+    "normalizer_model": "gemma4:e4b",
+    "temperature": 0.3
+  },
+  "aggregate_scores": {
+    "coverage": 0.0,
+    "weighted_coverage": 0.0,
+    "grounded_precision": 0.0,
+    "top_5_coverage": 0.0,
+    "top_10_coverage": 0.0,
+    "total_cases": 1,
+    "total_targets": 8,
+    "total_matched": 0
+  },
+  "case_results": [
+    {
+      "case_id": "124938510_C01",
+      "case_domain": "gynecology",
+      "case_name": "IUD replacement vs menopause question",
+      "note_count": 1,
+      "char_count": 2321,
+      "generated_questions": [
+        {
+          "rank": 1,
+          "raw": "Have you experienced any fever, chills, or signs of infection since the procedure?",
+          "domain": "gynecology",
+          "concept": "other",
+          "target_slot": "other",
+          "grounded": false,
+          "matched_target_id": null
+        },
+        {
+          "rank": 2,
+          "raw": "Are you experiencing any severe pelvic or abdominal pain?",
+          "domain": "gynecology",
+          "concept": "other",
+          "target_slot": "other",
+          "grounded": false,
+          "matched_target_id": null
+        },
+        {
+          "rank": 3,
+          "raw": "Have you noticed any heavy bleeding or unusual spotting?",
+          "domain": "gynecology",
+          "concept": "other",
+          "target_slot": "other",
+          "grounded": false,
+          "matched_target_id": null
+        },
+        {
+          "rank": 4,
+          "raw": "Are you having any difficulty locating or feeling the IUD strings?",
+          "domain": "gynecology",
+          "concept": "other",
+          "target_slot": "other",
+          "grounded": false,
+          "matched_target_id": null
+        },
+        {
+          "rank": 5,
+          "raw": "Have your menstrual bleeding patterns changed since the insertion?",
+          "domain": "gynecology",
+          "concept": "other",
+          "target_slot": "other",
+          "grounded": false,
+          "matched_target_id": null
+        },
+        {
+          "rank": 6,
+          "raw": "Are you experiencing any cramping or irregular bleeding that is concerning to you?",
+          "domain": "gynecology",
+          "concept": "other",
+          "target_slot": "other",
+          "grounded": false,
+          "matched_target_id": null
+        },
+        {
+          "rank": 7,
+          "raw": "Have you noticed any changes in your usual hot flashes or night sweats?",
+          "domain": "gynecology",
+          "concept": "other",
+          "target_slot": "other",
+          "grounded": false,
+          "matched_target_id": null
+        },
+        {
+          "rank": 8,
+          "raw": "How has your general energy level been since the procedure?",
+          "domain": "gynecology",
+          "concept": "other",
+          "target_slot": "other",
+          "grounded": false,
+          "matched_target_id": null
+        },
+        {
+          "rank": 9,
+          "raw": "Are you having any pain when you sit or move?",
+          "domain": "gynecology",
+          "concept": "other",
+          "target_slot": "other",
+          "grounded": false,
+          "matched_target_id": null
+        },
+        {
+          "rank": 10,
+          "raw": "Have you had any changes in your bowel or bladder habits?",
+          "domain": "gynecology",
+          "concept": "other",
+          "target_slot": "other",
+          "grounded": false,
+          "matched_target_id": null
+        },
+        {
+          "rank": 11,
+          "raw": "Are you experiencing any nausea or vomiting?",
+          "domain": "gynecology",
+          "concept": "other",
+          "target_slot": "other",
+          "grounded": false,
+          "matched_target_id": null
+        },
+        {
+          "rank": 12,
+          "raw": "Have you had any concerns about the effectiveness of the new IUD?",
+          "domain": "gynecology",
+          "concept": "other",
+          "target_slot": "other",
+          "grounded": false,
+          "matched_target_id": null
+        }
+      ],
+      "scores": {
+        "coverage": 0.0,
+        "weighted_coverage": 0.0,
+        "grounded_precision": 0.0,
+        "top_5_coverage": 0.0,
+        "top_10_coverage": 0.0,
+        "matched_count": 0,
+        "total_targets": 8,
+        "total_generated": 12
+      },
+      "target_detail": [
+        {
+          "target_id": "124938510_C01_T000",
+          "concept": "iud",
+          "target_slot": "menopausal_symptoms",
+          "severity": "low",
+          "weight": 1,
+          "hit": false
+        },
+        {
+          "target_id": "124938510_C01_T001",
+          "concept": "iud",
+          "target_slot": "hot_flashes",
+          "severity": "low",
+          "weight": 1,
+          "hit": false
+        },
+        {
+          "target_id": "124938510_C01_T002",
+          "concept": "iud",
+          "target_slot": "night_sweats",
+          "severity": "low",
+          "weight": 1,
+          "hit": false
+        },
+        {
+          "target_id": "124938510_C01_T003",
+          "concept": "iud",
+          "target_slot": "bleeding",
+          "severity": "low",
+          "weight": 1,
+          "hit": false
+        },
+        {
+          "target_id": "124938510_C01_T004",
+          "concept": "iud",
+          "target_slot": "pelvic_pain",
+          "severity": "medium",
+          "weight": 2,
+          "hit": false
+        },
+        {
+          "target_id": "124938510_C01_T005",
+          "concept": "iud",
+          "target_slot": "fever_chills",
+          "severity": "medium",
+          "weight": 2,
+          "hit": false
+        },
+        {
+          "target_id": "124938510_C01_T006",
+          "concept": "iud",
+          "target_slot": "strings_palpable",
+          "severity": "low",
+          "weight": 1,
+          "hit": false
+        },
+        {
+          "target_id": "124938510_C01_T007",
+          "concept": "iud",
+          "target_slot": "device_tolerance",
+          "severity": "low",
+          "weight": 1,
+          "hit": false
+        }
+      ],
+      "unmatched_questions": [
+        {
+          "rank": 1,
+          "raw": "Have you experienced any fever, chills, or signs of infection since the procedure?",
+          "domain": "gynecology",
+          "concept": "other",
+          "target_slot": "other"
+        },
+        {
+          "rank": 2,
+          "raw": "Are you experiencing any severe pelvic or abdominal pain?",
+          "domain": "gynecology",
+          "concept": "other",
+          "target_slot": "other"
+        },
+        {
+          "rank": 3,
+          "raw": "Have you noticed any heavy bleeding or unusual spotting?",
+          "domain": "gynecology",
+          "concept": "other",
+          "target_slot": "other"
+        },
+        {
+          "rank": 4,
+          "raw": "Are you having any difficulty locating or feeling the IUD strings?",
+          "domain": "gynecology",
+          "concept": "other",
+          "target_slot": "other"
+        },
+        {
+          "rank": 5,
+          "raw": "Have your menstrual bleeding patterns changed since the insertion?",
+          "domain": "gynecology",
+          "concept": "other",
+          "target_slot": "other"
+        },
+        {
+          "rank": 6,
+          "raw": "Are you experiencing any cramping or irregular bleeding that is concerning to you?",
+          "domain": "gynecology",
+          "concept": "other",
+          "target_slot": "other"
+        },
+        {
+          "rank": 7,
+          "raw": "Have you noticed any changes in your usual hot flashes or night sweats?",
+          "domain": "gynecology",
+          "concept": "other",
+          "target_slot": "other"
+        },
+        {
+          "rank": 8,
+          "raw": "How has your general energy level been since the procedure?",
+          "domain": "gynecology",
+          "concept": "other",
+          "target_slot": "other"
+        },
+        {
+          "rank": 9,
+          "raw": "Are you having any pain when you sit or move?",
+          "domain": "gynecology",
+          "concept": "other",
+          "target_slot": "other"
+        },
+        {
+          "rank": 10,
+          "raw": "Have you had any changes in your bowel or bladder habits?",
+          "domain": "gynecology",
+          "concept": "other",
+          "target_slot": "other"
+        },
+        {
+          "rank": 11,
+          "raw": "Are you experiencing any nausea or vomiting?",
+          "domain": "gynecology",
+          "concept": "other",
+          "target_slot": "other"
+        },
+        {
+          "rank": 12,
+          "raw": "Have you had any concerns about the effectiveness of the new IUD?",
+          "domain": "gynecology",
+          "concept": "other",
+          "target_slot": "other"
+        }
+      ],
+      "gen_meta": {
+        "model": "gemma4:e4b",
+        "raw_output": "1. Have you experienced any fever, chills, or signs of infection since the procedure?\n2. Are you experiencing any severe pelvic or abdominal pain?\n3. Have you noticed any heavy bleeding or unusual spotting?\n4. Are you having any difficulty locating or feeling the IUD strings?\n5. Have your menstrual bleeding patterns changed since the insertion?\n6. Are you experiencing any cramping or irregular bleeding that is concerning to you?\n7. Have you noticed any changes in your usual hot flashes or night sweats?\n8. How has your general energy level been since the procedure?\n9. Are you having any pain when you sit or move?\n10. Have you had any changes in your bowel or bladder habits?\n11. Are you experiencing any nausea or vomiting?\n12. Have you had any concerns about the effectiveness of the new IUD?",
+        "input_chars": 2321,
+        "usage": {
+          "prompt_tokens": 753,
+          "completion_tokens": 908
+        }
+      }
+    }
+  ]
+}

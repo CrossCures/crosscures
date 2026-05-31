@@ -1,0 +1,3331 @@
+{
+  "run_timestamp": "20260416_185903",
+  "config": {
+    "provider": "ollama",
+    "model": "gemma4:e4b",
+    "normalizer_model": "gemma4:e4b",
+    "temperature": 0.3
+  },
+  "aggregate_scores": {
+    "coverage": 0.3078,
+    "weighted_coverage": 0.3509,
+    "grounded_precision": 0.1715,
+    "top_5_coverage": 0.1915,
+    "top_10_coverage": 0.2688,
+    "total_cases": 12,
+    "total_targets": 78,
+    "total_matched": 26
+  },
+  "case_results": [
+    {
+      "case_id": "124938510_C01",
+      "case_domain": "gynecology",
+      "case_name": "IUD replacement vs menopause question",
+      "note_count": 1,
+      "char_count": 2321,
+      "generated_questions": [
+        {
+          "rank": 1,
+          "raw": "Have you experienced any fever, chills, or signs of infection since the procedure?",
+          "domain": "gynecology",
+          "concept": "iud",
+          "target_slot": "fever_chills",
+          "grounded": true,
+          "matched_target_id": "124938510_C01_T005"
+        },
+        {
+          "rank": 2,
+          "raw": "Are you experiencing any severe or worsening pelvic or abdominal pain?",
+          "domain": "gynecology",
+          "concept": "iud",
+          "target_slot": "pelvic_pain",
+          "grounded": true,
+          "matched_target_id": "124938510_C01_T004"
+        },
+        {
+          "rank": 3,
+          "raw": "Have you noticed any heavy bleeding or unusual spotting since the IUD insertion?",
+          "domain": "gynecology",
+          "concept": "iud",
+          "target_slot": "bleeding",
+          "grounded": true,
+          "matched_target_id": "124938510_C01_T003"
+        },
+        {
+          "rank": 4,
+          "raw": "Can you still feel the IUD strings when you check them?",
+          "domain": "gynecology",
+          "concept": "iud",
+          "target_slot": "strings_palpable",
+          "grounded": true,
+          "matched_target_id": "124938510_C01_T006"
+        },
+        {
+          "rank": 5,
+          "raw": "How would you describe your cramping or uterine discomfort compared to what we discussed?",
+          "domain": "gynecology",
+          "concept": "other",
+          "target_slot": "other",
+          "grounded": false,
+          "matched_target_id": null
+        },
+        {
+          "rank": 6,
+          "raw": "Have you noticed any unusual discharge from the vagina?",
+          "domain": "gynecology",
+          "concept": "other",
+          "target_slot": "other",
+          "grounded": false,
+          "matched_target_id": null
+        },
+        {
+          "rank": 7,
+          "raw": "Have you experienced any nausea or vomiting since the procedure?",
+          "domain": "gynecology",
+          "concept": "other",
+          "target_slot": "other",
+          "grounded": false,
+          "matched_target_id": null
+        },
+        {
+          "rank": 8,
+          "raw": "Have you had any changes in your bowel or bladder habits?",
+          "domain": "gynecology",
+          "concept": "other",
+          "target_slot": "other",
+          "grounded": false,
+          "matched_target_id": null
+        },
+        {
+          "rank": 9,
+          "raw": "Are you experiencing any new or worsening hot flashes or night sweats?",
+          "domain": "gynecology",
+          "concept": "iud",
+          "target_slot": "hot_flashes",
+          "grounded": true,
+          "matched_target_id": "124938510_C01_T001"
+        },
+        {
+          "rank": 10,
+          "raw": "Are you having any difficulty or pain when urinating?",
+          "domain": "gynecology",
+          "concept": "other",
+          "target_slot": "other",
+          "grounded": false,
+          "matched_target_id": null
+        },
+        {
+          "rank": 11,
+          "raw": "Have you noticed any changes in your overall energy level or fatigue?",
+          "domain": "gynecology",
+          "concept": "other",
+          "target_slot": "other",
+          "grounded": false,
+          "matched_target_id": null
+        },
+        {
+          "rank": 12,
+          "raw": "Have you had any concerns about your weight or eating habits since the visit?",
+          "domain": "gynecology",
+          "concept": "other",
+          "target_slot": "other",
+          "grounded": false,
+          "matched_target_id": null
+        },
+        {
+          "rank": 13,
+          "raw": "Are you experiencing any dizziness or lightheadedness when standing up?",
+          "domain": "gynecology",
+          "concept": "other",
+          "target_slot": "other",
+          "grounded": false,
+          "matched_target_id": null
+        }
+      ],
+      "scores": {
+        "coverage": 0.625,
+        "weighted_coverage": 0.7,
+        "grounded_precision": 0.3846,
+        "top_5_coverage": 0.5,
+        "top_10_coverage": 0.625,
+        "matched_count": 5,
+        "total_targets": 8,
+        "total_generated": 13
+      },
+      "target_detail": [
+        {
+          "target_id": "124938510_C01_T000",
+          "concept": "iud",
+          "target_slot": "menopausal_symptoms",
+          "severity": "low",
+          "weight": 1,
+          "hit": false
+        },
+        {
+          "target_id": "124938510_C01_T001",
+          "concept": "iud",
+          "target_slot": "hot_flashes",
+          "severity": "low",
+          "weight": 1,
+          "hit": true,
+          "matched_by": "Are you experiencing any new or worsening hot flashes or night sweats?",
+          "matched_rank": 9
+        },
+        {
+          "target_id": "124938510_C01_T002",
+          "concept": "iud",
+          "target_slot": "night_sweats",
+          "severity": "low",
+          "weight": 1,
+          "hit": false
+        },
+        {
+          "target_id": "124938510_C01_T003",
+          "concept": "iud",
+          "target_slot": "bleeding",
+          "severity": "low",
+          "weight": 1,
+          "hit": true,
+          "matched_by": "Have you noticed any heavy bleeding or unusual spotting since the IUD insertion?",
+          "matched_rank": 3
+        },
+        {
+          "target_id": "124938510_C01_T004",
+          "concept": "iud",
+          "target_slot": "pelvic_pain",
+          "severity": "medium",
+          "weight": 2,
+          "hit": true,
+          "matched_by": "Are you experiencing any severe or worsening pelvic or abdominal pain?",
+          "matched_rank": 2
+        },
+        {
+          "target_id": "124938510_C01_T005",
+          "concept": "iud",
+          "target_slot": "fever_chills",
+          "severity": "medium",
+          "weight": 2,
+          "hit": true,
+          "matched_by": "Have you experienced any fever, chills, or signs of infection since the procedure?",
+          "matched_rank": 1
+        },
+        {
+          "target_id": "124938510_C01_T006",
+          "concept": "iud",
+          "target_slot": "strings_palpable",
+          "severity": "low",
+          "weight": 1,
+          "hit": true,
+          "matched_by": "Can you still feel the IUD strings when you check them?",
+          "matched_rank": 4
+        },
+        {
+          "target_id": "124938510_C01_T007",
+          "concept": "iud",
+          "target_slot": "device_tolerance",
+          "severity": "low",
+          "weight": 1,
+          "hit": false
+        }
+      ],
+      "unmatched_questions": [
+        {
+          "rank": 5,
+          "raw": "How would you describe your cramping or uterine discomfort compared to what we discussed?",
+          "domain": "gynecology",
+          "concept": "other",
+          "target_slot": "other"
+        },
+        {
+          "rank": 6,
+          "raw": "Have you noticed any unusual discharge from the vagina?",
+          "domain": "gynecology",
+          "concept": "other",
+          "target_slot": "other"
+        },
+        {
+          "rank": 7,
+          "raw": "Have you experienced any nausea or vomiting since the procedure?",
+          "domain": "gynecology",
+          "concept": "other",
+          "target_slot": "other"
+        },
+        {
+          "rank": 8,
+          "raw": "Have you had any changes in your bowel or bladder habits?",
+          "domain": "gynecology",
+          "concept": "other",
+          "target_slot": "other"
+        },
+        {
+          "rank": 10,
+          "raw": "Are you having any difficulty or pain when urinating?",
+          "domain": "gynecology",
+          "concept": "other",
+          "target_slot": "other"
+        },
+        {
+          "rank": 11,
+          "raw": "Have you noticed any changes in your overall energy level or fatigue?",
+          "domain": "gynecology",
+          "concept": "other",
+          "target_slot": "other"
+        },
+        {
+          "rank": 12,
+          "raw": "Have you had any concerns about your weight or eating habits since the visit?",
+          "domain": "gynecology",
+          "concept": "other",
+          "target_slot": "other"
+        },
+        {
+          "rank": 13,
+          "raw": "Are you experiencing any dizziness or lightheadedness when standing up?",
+          "domain": "gynecology",
+          "concept": "other",
+          "target_slot": "other"
+        }
+      ],
+      "gen_meta": {
+        "model": "gemma4:e4b",
+        "raw_output": "1. Have you experienced any fever, chills, or signs of infection since the procedure?\n2. Are you experiencing any severe or worsening pelvic or abdominal pain?\n3. Have you noticed any heavy bleeding or unusual spotting since the IUD insertion?\n4. Can you still feel the IUD strings when you check them?\n5. How would you describe your cramping or uterine discomfort compared to what we discussed?\n6. Have you noticed any unusual discharge from the vagina?\n7. Have you experienced any nausea or vomiting since the procedure?\n8. Have you had any changes in your bowel or bladder habits?\n9. Are you experiencing any new or worsening hot flashes or night sweats?\n10. Are you having any difficulty or pain when urinating?\n11. Have you noticed any changes in your overall energy level or fatigue?\n12. Have you had any concerns about your weight or eating habits since the visit?\n13. Are you experiencing any dizziness or lightheadedness when standing up?",
+        "input_chars": 2321,
+        "usage": {
+          "prompt_tokens": 753,
+          "completion_tokens": 1054
+        }
+      }
+    },
+    {
+      "case_id": "124938510_C02",
+      "case_domain": "musculoskeletal",
+      "case_name": "Acute left knee effusion after bike fall",
+      "note_count": 1,
+      "char_count": 8606,
+      "generated_questions": [
+        {
+          "rank": 1,
+          "raw": "Has your pain in your knee or ankle gotten significantly worse since our last visit?",
+          "domain": "musculoskeletal",
+          "concept": "other",
+          "target_slot": "other",
+          "grounded": false,
+          "matched_target_id": null
+        },
+        {
+          "rank": 2,
+          "raw": "Have you noticed any tingling, numbness, or weakness in your knee or foot?",
+          "domain": "musculoskeletal",
+          "concept": "other",
+          "target_slot": "other",
+          "grounded": false,
+          "matched_target_id": null
+        },
+        {
+          "rank": 3,
+          "raw": "Have you experienced any fever or chills?",
+          "domain": "musculoskeletal",
+          "concept": "knee_pain",
+          "target_slot": "fever",
+          "grounded": true,
+          "matched_target_id": "124938510_C02_T014"
+        },
+        {
+          "rank": 4,
+          "raw": "Is there any pain, redness, or warmth in your calf, thigh, or groin?",
+          "domain": "musculoskeletal",
+          "concept": "knee_pain",
+          "target_slot": "redness_warmth",
+          "grounded": true,
+          "matched_target_id": "124938510_C02_T012"
+        },
+        {
+          "rank": 5,
+          "raw": "Have you seen any red streaks leading away from your knee or ankle?",
+          "domain": "musculoskeletal",
+          "concept": "knee_pain",
+          "target_slot": "range_of_motion",
+          "grounded": true,
+          "matched_target_id": "124938510_C02_T013"
+        },
+        {
+          "rank": 6,
+          "raw": "Have you had any shortness of breath or chest pain?",
+          "domain": "musculoskeletal",
+          "concept": "knee_pain",
+          "target_slot": "shortness_of_breath_chest_pain",
+          "grounded": true,
+          "matched_target_id": "124938510_C02_T015"
+        },
+        {
+          "rank": 7,
+          "raw": "Are you having any trouble putting weight on your knee or ankle?",
+          "domain": "musculoskeletal",
+          "concept": "other",
+          "target_slot": "other",
+          "grounded": false,
+          "matched_target_id": null
+        },
+        {
+          "rank": 8,
+          "raw": "Has the swelling in your left knee or ankle changed significantly since the last visit?",
+          "domain": "musculoskeletal",
+          "concept": "knee_pain",
+          "target_slot": "swelling",
+          "grounded": true,
+          "matched_target_id": "124938510_C02_T008"
+        },
+        {
+          "rank": 9,
+          "raw": "How is your left knee discomfort when you try to move it?",
+          "domain": "musculoskeletal",
+          "concept": "other",
+          "target_slot": "other",
+          "grounded": false,
+          "matched_target_id": null
+        },
+        {
+          "rank": 10,
+          "raw": "Have you noticed any new swelling in any part of your leg?",
+          "domain": "musculoskeletal",
+          "concept": "knee_pain",
+          "target_slot": "swelling",
+          "grounded": true,
+          "matched_target_id": null
+        },
+        {
+          "rank": 11,
+          "raw": "Are you experiencing any generalized bruising that seems to be lasting longer than two weeks?",
+          "domain": "musculoskeletal",
+          "concept": "other",
+          "target_slot": "other",
+          "grounded": false,
+          "matched_target_id": null
+        },
+        {
+          "rank": 12,
+          "raw": "Have you had any difficulty with movement in your knee or ankle since the fall?",
+          "domain": "musculoskeletal",
+          "concept": "other",
+          "target_slot": "other",
+          "grounded": false,
+          "matched_target_id": null
+        }
+      ],
+      "scores": {
+        "coverage": 0.625,
+        "weighted_coverage": 0.7222,
+        "grounded_precision": 0.4167,
+        "top_5_coverage": 0.375,
+        "top_10_coverage": 0.625,
+        "matched_count": 5,
+        "total_targets": 8,
+        "total_generated": 12
+      },
+      "target_detail": [
+        {
+          "target_id": "124938510_C02_T008",
+          "concept": "knee_pain",
+          "target_slot": "swelling",
+          "severity": "medium",
+          "weight": 2,
+          "hit": true,
+          "matched_by": "Has the swelling in your left knee or ankle changed significantly since the last visit?",
+          "matched_rank": 8
+        },
+        {
+          "target_id": "124938510_C02_T009",
+          "concept": "knee_pain",
+          "target_slot": "ankle_swelling",
+          "severity": "low",
+          "weight": 1,
+          "hit": false
+        },
+        {
+          "target_id": "124938510_C02_T010",
+          "concept": "knee_pain",
+          "target_slot": "pain_with_movement",
+          "severity": "medium",
+          "weight": 2,
+          "hit": false
+        },
+        {
+          "target_id": "124938510_C02_T011",
+          "concept": "knee_pain",
+          "target_slot": "weight_bearing_ability",
+          "severity": "medium",
+          "weight": 2,
+          "hit": false
+        },
+        {
+          "target_id": "124938510_C02_T012",
+          "concept": "knee_pain",
+          "target_slot": "redness_warmth",
+          "severity": "high",
+          "weight": 3,
+          "hit": true,
+          "matched_by": "Is there any pain, redness, or warmth in your calf, thigh, or groin?",
+          "matched_rank": 4
+        },
+        {
+          "target_id": "124938510_C02_T013",
+          "concept": "knee_pain",
+          "target_slot": "range_of_motion",
+          "severity": "high",
+          "weight": 3,
+          "hit": true,
+          "matched_by": "Have you seen any red streaks leading away from your knee or ankle?",
+          "matched_rank": 5
+        },
+        {
+          "target_id": "124938510_C02_T014",
+          "concept": "knee_pain",
+          "target_slot": "fever",
+          "severity": "high",
+          "weight": 3,
+          "hit": true,
+          "matched_by": "Have you experienced any fever or chills?",
+          "matched_rank": 3
+        },
+        {
+          "target_id": "124938510_C02_T015",
+          "concept": "knee_pain",
+          "target_slot": "shortness_of_breath_chest_pain",
+          "severity": "medium",
+          "weight": 2,
+          "hit": true,
+          "matched_by": "Have you had any shortness of breath or chest pain?",
+          "matched_rank": 6
+        }
+      ],
+      "unmatched_questions": [
+        {
+          "rank": 1,
+          "raw": "Has your pain in your knee or ankle gotten significantly worse since our last visit?",
+          "domain": "musculoskeletal",
+          "concept": "other",
+          "target_slot": "other"
+        },
+        {
+          "rank": 2,
+          "raw": "Have you noticed any tingling, numbness, or weakness in your knee or foot?",
+          "domain": "musculoskeletal",
+          "concept": "other",
+          "target_slot": "other"
+        },
+        {
+          "rank": 7,
+          "raw": "Are you having any trouble putting weight on your knee or ankle?",
+          "domain": "musculoskeletal",
+          "concept": "other",
+          "target_slot": "other"
+        },
+        {
+          "rank": 9,
+          "raw": "How is your left knee discomfort when you try to move it?",
+          "domain": "musculoskeletal",
+          "concept": "other",
+          "target_slot": "other"
+        },
+        {
+          "rank": 10,
+          "raw": "Have you noticed any new swelling in any part of your leg?",
+          "domain": "musculoskeletal",
+          "concept": "knee_pain",
+          "target_slot": "swelling"
+        },
+        {
+          "rank": 11,
+          "raw": "Are you experiencing any generalized bruising that seems to be lasting longer than two weeks?",
+          "domain": "musculoskeletal",
+          "concept": "other",
+          "target_slot": "other"
+        },
+        {
+          "rank": 12,
+          "raw": "Have you had any difficulty with movement in your knee or ankle since the fall?",
+          "domain": "musculoskeletal",
+          "concept": "other",
+          "target_slot": "other"
+        }
+      ],
+      "gen_meta": {
+        "model": "gemma4:e4b",
+        "raw_output": "1. Has your pain in your knee or ankle gotten significantly worse since our last visit?\n2. Have you noticed any tingling, numbness, or weakness in your knee or foot?\n3. Have you experienced any fever or chills?\n4. Is there any pain, redness, or warmth in your calf, thigh, or groin?\n5. Have you seen any red streaks leading away from your knee or ankle?\n6. Have you had any shortness of breath or chest pain?\n7. Are you having any trouble putting weight on your knee or ankle?\n8. Has the swelling in your left knee or ankle changed significantly since the last visit?\n9. How is your left knee discomfort when you try to move it?\n10. Have you noticed any new swelling in any part of your leg?\n11. Are you experiencing any generalized bruising that seems to be lasting longer than two weeks?\n12. Have you had any difficulty with movement in your knee or ankle since the fall?",
+        "input_chars": 8606,
+        "usage": {
+          "prompt_tokens": 2339,
+          "completion_tokens": 1142
+        }
+      }
+    },
+    {
+      "case_id": "124938510_C03",
+      "case_domain": "musculoskeletal",
+      "case_name": "Residual left knee stiffness after infection concern",
+      "note_count": 3,
+      "char_count": 23048,
+      "generated_questions": [
+        {
+          "rank": 1,
+          "raw": "Has the redness or warmth around your left knee changed or spread since your last visit?",
+          "domain": "musculoskeletal",
+          "concept": "other",
+          "target_slot": "other",
+          "grounded": false,
+          "matched_target_id": null
+        },
+        {
+          "rank": 2,
+          "raw": "Have you noticed any red streaks leading away from your knee or ankle?",
+          "domain": "musculoskeletal",
+          "concept": "other",
+          "target_slot": "other",
+          "grounded": false,
+          "matched_target_id": null
+        },
+        {
+          "rank": 3,
+          "raw": "Are you experiencing any discharge or drainage from the knee area?",
+          "domain": "musculoskeletal",
+          "concept": "other",
+          "target_slot": "other",
+          "grounded": false,
+          "matched_target_id": null
+        },
+        {
+          "rank": 4,
+          "raw": "Have you had any fever or chills since your last visit?",
+          "domain": "musculoskeletal",
+          "concept": "other",
+          "target_slot": "other",
+          "grounded": false,
+          "matched_target_id": null
+        },
+        {
+          "rank": 5,
+          "raw": "Do you have any pain, redness, or swelling in your calf, thigh, or groin?",
+          "domain": "musculoskeletal",
+          "concept": "other",
+          "target_slot": "other",
+          "grounded": false,
+          "matched_target_id": null
+        },
+        {
+          "rank": 6,
+          "raw": "Is the pain in your knee or ankle worse at a specific time of day?",
+          "domain": "musculoskeletal",
+          "concept": "other",
+          "target_slot": "other",
+          "grounded": false,
+          "matched_target_id": null
+        },
+        {
+          "rank": 7,
+          "raw": "When you move your knee, is the stiffness worse when bending (flexion) or when straightening (extension)?",
+          "domain": "musculoskeletal",
+          "concept": "knee_pain",
+          "target_slot": "stiffness",
+          "grounded": true,
+          "matched_target_id": "124938510_C03_T016"
+        },
+        {
+          "rank": 8,
+          "raw": "Are there any specific movements, like crossing your legs or climbing stairs, that cause increased pain?",
+          "domain": "musculoskeletal",
+          "concept": "other",
+          "target_slot": "other",
+          "grounded": false,
+          "matched_target_id": null
+        },
+        {
+          "rank": 9,
+          "raw": "Have you been able to increase your activity level, such as walking or biking, since your last appointment?",
+          "domain": "musculoskeletal",
+          "concept": "knee_pain",
+          "target_slot": "walking_tolerance",
+          "grounded": true,
+          "matched_target_id": "124938510_C03_T018"
+        },
+        {
+          "rank": 10,
+          "raw": "Are you experiencing any numbness, tingling, or weakness in your lower legs or feet?",
+          "domain": "musculoskeletal",
+          "concept": "other",
+          "target_slot": "other",
+          "grounded": false,
+          "matched_target_id": null
+        },
+        {
+          "rank": 11,
+          "raw": "Have you noticed any changes in the swelling level in your ankle or knee?",
+          "domain": "musculoskeletal",
+          "concept": "other",
+          "target_slot": "other",
+          "grounded": false,
+          "matched_target_id": null
+        },
+        {
+          "rank": 12,
+          "raw": "Have you had any new injuries or scrapes on your legs since the fall?",
+          "domain": "musculoskeletal",
+          "concept": "other",
+          "target_slot": "other",
+          "grounded": false,
+          "matched_target_id": null
+        },
+        {
+          "rank": 13,
+          "raw": "How has your overall pain level been compared to when you first presented?",
+          "domain": "musculoskeletal",
+          "concept": "other",
+          "target_slot": "other",
+          "grounded": false,
+          "matched_target_id": null
+        }
+      ],
+      "scores": {
+        "coverage": 0.2857,
+        "weighted_coverage": 0.4,
+        "grounded_precision": 0.1538,
+        "top_5_coverage": 0.0,
+        "top_10_coverage": 0.2857,
+        "matched_count": 2,
+        "total_targets": 7,
+        "total_generated": 13
+      },
+      "target_detail": [
+        {
+          "target_id": "124938510_C03_T016",
+          "concept": "knee_pain",
+          "target_slot": "stiffness",
+          "severity": "medium",
+          "weight": 2,
+          "hit": true,
+          "matched_by": "When you move your knee, is the stiffness worse when bending (flexion) or when straightening (extension)?",
+          "matched_rank": 7
+        },
+        {
+          "target_id": "124938510_C03_T017",
+          "concept": "knee_pain",
+          "target_slot": "flexion_limitation",
+          "severity": "medium",
+          "weight": 2,
+          "hit": false
+        },
+        {
+          "target_id": "124938510_C03_T018",
+          "concept": "knee_pain",
+          "target_slot": "walking_tolerance",
+          "severity": "medium",
+          "weight": 2,
+          "hit": true,
+          "matched_by": "Have you been able to increase your activity level, such as walking or biking, since your last appointment?",
+          "matched_rank": 9
+        },
+        {
+          "target_id": "124938510_C03_T019",
+          "concept": "knee_pain",
+          "target_slot": "biking_tolerance",
+          "severity": "low",
+          "weight": 1,
+          "hit": false
+        },
+        {
+          "target_id": "124938510_C03_T020",
+          "concept": "knee_pain",
+          "target_slot": "kneeling_tolerance",
+          "severity": "low",
+          "weight": 1,
+          "hit": false
+        },
+        {
+          "target_id": "124938510_C03_T021",
+          "concept": "knee_pain",
+          "target_slot": "sleep_disruption",
+          "severity": "low",
+          "weight": 1,
+          "hit": false
+        },
+        {
+          "target_id": "124938510_C03_T022",
+          "concept": "physical_therapy",
+          "target_slot": "rehab_response",
+          "severity": "low",
+          "weight": 1,
+          "hit": false
+        }
+      ],
+      "unmatched_questions": [
+        {
+          "rank": 1,
+          "raw": "Has the redness or warmth around your left knee changed or spread since your last visit?",
+          "domain": "musculoskeletal",
+          "concept": "other",
+          "target_slot": "other"
+        },
+        {
+          "rank": 2,
+          "raw": "Have you noticed any red streaks leading away from your knee or ankle?",
+          "domain": "musculoskeletal",
+          "concept": "other",
+          "target_slot": "other"
+        },
+        {
+          "rank": 3,
+          "raw": "Are you experiencing any discharge or drainage from the knee area?",
+          "domain": "musculoskeletal",
+          "concept": "other",
+          "target_slot": "other"
+        },
+        {
+          "rank": 4,
+          "raw": "Have you had any fever or chills since your last visit?",
+          "domain": "musculoskeletal",
+          "concept": "other",
+          "target_slot": "other"
+        },
+        {
+          "rank": 5,
+          "raw": "Do you have any pain, redness, or swelling in your calf, thigh, or groin?",
+          "domain": "musculoskeletal",
+          "concept": "other",
+          "target_slot": "other"
+        },
+        {
+          "rank": 6,
+          "raw": "Is the pain in your knee or ankle worse at a specific time of day?",
+          "domain": "musculoskeletal",
+          "concept": "other",
+          "target_slot": "other"
+        },
+        {
+          "rank": 8,
+          "raw": "Are there any specific movements, like crossing your legs or climbing stairs, that cause increased pain?",
+          "domain": "musculoskeletal",
+          "concept": "other",
+          "target_slot": "other"
+        },
+        {
+          "rank": 10,
+          "raw": "Are you experiencing any numbness, tingling, or weakness in your lower legs or feet?",
+          "domain": "musculoskeletal",
+          "concept": "other",
+          "target_slot": "other"
+        },
+        {
+          "rank": 11,
+          "raw": "Have you noticed any changes in the swelling level in your ankle or knee?",
+          "domain": "musculoskeletal",
+          "concept": "other",
+          "target_slot": "other"
+        },
+        {
+          "rank": 12,
+          "raw": "Have you had any new injuries or scrapes on your legs since the fall?",
+          "domain": "musculoskeletal",
+          "concept": "other",
+          "target_slot": "other"
+        },
+        {
+          "rank": 13,
+          "raw": "How has your overall pain level been compared to when you first presented?",
+          "domain": "musculoskeletal",
+          "concept": "other",
+          "target_slot": "other"
+        }
+      ],
+      "gen_meta": {
+        "model": "gemma4:e4b",
+        "raw_output": "1. Has the redness or warmth around your left knee changed or spread since your last visit?\n2. Have you noticed any red streaks leading away from your knee or ankle?\n3. Are you experiencing any discharge or drainage from the knee area?\n4. Have you had any fever or chills since your last visit?\n5. Do you have any pain, redness, or swelling in your calf, thigh, or groin?\n6. Is the pain in your knee or ankle worse at a specific time of day?\n7. When you move your knee, is the stiffness worse when bending (flexion) or when straightening (extension)?\n8. Are there any specific movements, like crossing your legs or climbing stairs, that cause increased pain?\n9. Have you been able to increase your activity level, such as walking or biking, since your last appointment?\n10. Are you experiencing any numbness, tingling, or weakness in your lower legs or feet?\n11. Have you noticed any changes in the swelling level in your ankle or knee?\n12. Have you had any new injuries or scrapes on your legs since the fall?\n13. How has your overall pain level been compared to when you first presented?",
+        "input_chars": 23048,
+        "usage": {
+          "prompt_tokens": 6154,
+          "completion_tokens": 1167
+        }
+      }
+    },
+    {
+      "case_id": "124938510_C04",
+      "case_domain": "preventive_care",
+      "case_name": "Average-risk colorectal screening referral",
+      "note_count": 1,
+      "char_count": 2759,
+      "generated_questions": [
+        {
+          "rank": 1,
+          "raw": "Have you noticed any recent changes in your weight or difficulty maintaining a consistent weight?",
+          "domain": "preventive_care",
+          "concept": "other",
+          "target_slot": "other",
+          "grounded": false,
+          "matched_target_id": null
+        },
+        {
+          "rank": 2,
+          "raw": "How often are you able to monitor your blood pressure at home, and what readings have you been getting?",
+          "domain": "preventive_care",
+          "concept": "other",
+          "target_slot": "other",
+          "grounded": false,
+          "matched_target_id": null
+        },
+        {
+          "rank": 3,
+          "raw": "Can you describe your typical diet over the past week?",
+          "domain": "preventive_care",
+          "concept": "other",
+          "target_slot": "other",
+          "grounded": false,
+          "matched_target_id": null
+        },
+        {
+          "rank": 4,
+          "raw": "Have you noticed any changes in your bowel habits, such as constipation or diarrhea?",
+          "domain": "preventive_care / colon_cancer_screening",
+          "concept": "gi_symptoms",
+          "target_slot": "gi_symptoms",
+          "grounded": false,
+          "matched_target_id": null
+        },
+        {
+          "rank": 5,
+          "raw": "Are you currently experiencing any hot flashes, night sweats, or changes in your menstrual cycle?",
+          "domain": "preventive_care",
+          "concept": "other",
+          "target_slot": "other",
+          "grounded": false,
+          "matched_target_id": null
+        },
+        {
+          "rank": 6,
+          "raw": "How would you describe your mood and emotional state over the past few weeks?",
+          "domain": "preventive_care",
+          "concept": "other",
+          "target_slot": "other",
+          "grounded": false,
+          "matched_target_id": null
+        },
+        {
+          "rank": 7,
+          "raw": "What is your typical level of physical activity during a week?",
+          "domain": "preventive_care",
+          "concept": "other",
+          "target_slot": "other",
+          "grounded": false,
+          "matched_target_id": null
+        },
+        {
+          "rank": 8,
+          "raw": "Are you currently taking any over-the-counter medications or supplements?",
+          "domain": "preventive_care",
+          "concept": "other",
+          "target_slot": "other",
+          "grounded": false,
+          "matched_target_id": null
+        },
+        {
+          "rank": 9,
+          "raw": "Are you experiencing any abdominal pain, bloating, or discomfort?",
+          "domain": "preventive_care / colon_cancer_screening",
+          "concept": "gi_symptoms",
+          "target_slot": "gi_symptoms",
+          "grounded": false,
+          "matched_target_id": null
+        },
+        {
+          "rank": 10,
+          "raw": "How has your sleep quality been lately?",
+          "domain": "preventive_care",
+          "concept": "other",
+          "target_slot": "other",
+          "grounded": false,
+          "matched_target_id": null
+        },
+        {
+          "rank": 11,
+          "raw": "Have you had any falls or injuries recently?",
+          "domain": "preventive_care",
+          "concept": "other",
+          "target_slot": "other",
+          "grounded": false,
+          "matched_target_id": null
+        },
+        {
+          "rank": 12,
+          "raw": "Are there any specific times of day when you feel more fatigued?",
+          "domain": "preventive_care",
+          "concept": "other",
+          "target_slot": "other",
+          "grounded": false,
+          "matched_target_id": null
+        },
+        {
+          "rank": 13,
+          "raw": "Have you noticed any changes in your vision or hearing?",
+          "domain": "preventive_care",
+          "concept": "other",
+          "target_slot": "other",
+          "grounded": false,
+          "matched_target_id": null
+        }
+      ],
+      "scores": {
+        "coverage": 0.0,
+        "weighted_coverage": 0.0,
+        "grounded_precision": 0.0,
+        "top_5_coverage": 0.0,
+        "top_10_coverage": 0.0,
+        "matched_count": 0,
+        "total_targets": 3,
+        "total_generated": 13
+      },
+      "target_detail": [
+        {
+          "target_id": "124938510_C04_T023",
+          "concept": "colon_cancer_screening",
+          "target_slot": "prior_colonoscopy",
+          "severity": "low",
+          "weight": 1,
+          "hit": false
+        },
+        {
+          "target_id": "124938510_C04_T024",
+          "concept": "colon_cancer_screening",
+          "target_slot": "gi_symptoms",
+          "severity": "medium",
+          "weight": 2,
+          "hit": false
+        },
+        {
+          "target_id": "124938510_C04_T025",
+          "concept": "colon_cancer_screening",
+          "target_slot": "screening_status",
+          "severity": "low",
+          "weight": 1,
+          "hit": false
+        }
+      ],
+      "unmatched_questions": [
+        {
+          "rank": 1,
+          "raw": "Have you noticed any recent changes in your weight or difficulty maintaining a consistent weight?",
+          "domain": "preventive_care",
+          "concept": "other",
+          "target_slot": "other"
+        },
+        {
+          "rank": 2,
+          "raw": "How often are you able to monitor your blood pressure at home, and what readings have you been getting?",
+          "domain": "preventive_care",
+          "concept": "other",
+          "target_slot": "other"
+        },
+        {
+          "rank": 3,
+          "raw": "Can you describe your typical diet over the past week?",
+          "domain": "preventive_care",
+          "concept": "other",
+          "target_slot": "other"
+        },
+        {
+          "rank": 4,
+          "raw": "Have you noticed any changes in your bowel habits, such as constipation or diarrhea?",
+          "domain": "preventive_care / colon_cancer_screening",
+          "concept": "gi_symptoms",
+          "target_slot": "gi_symptoms"
+        },
+        {
+          "rank": 5,
+          "raw": "Are you currently experiencing any hot flashes, night sweats, or changes in your menstrual cycle?",
+          "domain": "preventive_care",
+          "concept": "other",
+          "target_slot": "other"
+        },
+        {
+          "rank": 6,
+          "raw": "How would you describe your mood and emotional state over the past few weeks?",
+          "domain": "preventive_care",
+          "concept": "other",
+          "target_slot": "other"
+        },
+        {
+          "rank": 7,
+          "raw": "What is your typical level of physical activity during a week?",
+          "domain": "preventive_care",
+          "concept": "other",
+          "target_slot": "other"
+        },
+        {
+          "rank": 8,
+          "raw": "Are you currently taking any over-the-counter medications or supplements?",
+          "domain": "preventive_care",
+          "concept": "other",
+          "target_slot": "other"
+        },
+        {
+          "rank": 9,
+          "raw": "Are you experiencing any abdominal pain, bloating, or discomfort?",
+          "domain": "preventive_care / colon_cancer_screening",
+          "concept": "gi_symptoms",
+          "target_slot": "gi_symptoms"
+        },
+        {
+          "rank": 10,
+          "raw": "How has your sleep quality been lately?",
+          "domain": "preventive_care",
+          "concept": "other",
+          "target_slot": "other"
+        },
+        {
+          "rank": 11,
+          "raw": "Have you had any falls or injuries recently?",
+          "domain": "preventive_care",
+          "concept": "other",
+          "target_slot": "other"
+        },
+        {
+          "rank": 12,
+          "raw": "Are there any specific times of day when you feel more fatigued?",
+          "domain": "preventive_care",
+          "concept": "other",
+          "target_slot": "other"
+        },
+        {
+          "rank": 13,
+          "raw": "Have you noticed any changes in your vision or hearing?",
+          "domain": "preventive_care",
+          "concept": "other",
+          "target_slot": "other"
+        }
+      ],
+      "gen_meta": {
+        "model": "gemma4:e4b",
+        "raw_output": "1. Have you noticed any recent changes in your weight or difficulty maintaining a consistent weight?\n2. How often are you able to monitor your blood pressure at home, and what readings have you been getting?\n3. Can you describe your typical diet over the past week?\n4. Have you noticed any changes in your bowel habits, such as constipation or diarrhea?\n5. Are you currently experiencing any hot flashes, night sweats, or changes in your menstrual cycle?\n6. How would you describe your mood and emotional state over the past few weeks?\n7. What is your typical level of physical activity during a week?\n8. Are you currently taking any over-the-counter medications or supplements?\n9. Are you experiencing any abdominal pain, bloating, or discomfort?\n10. How has your sleep quality been lately?\n11. Have you had any falls or injuries recently?\n12. Are there any specific times of day when you feel more fatigued?\n13. Have you noticed any changes in your vision or hearing?",
+        "input_chars": 2759,
+        "usage": {
+          "prompt_tokens": 960,
+          "completion_tokens": 1024
+        }
+      }
+    },
+    {
+      "case_id": "124938510_C05",
+      "case_domain": "musculoskeletal",
+      "case_name": "Chronic right shoulder pain in multi-MSK visit",
+      "note_count": 1,
+      "char_count": 5019,
+      "generated_questions": [
+        {
+          "rank": 1,
+          "raw": "How has the left ankle pain and swelling changed over the past week?",
+          "domain": "musculoskeletal",
+          "concept": "other",
+          "target_slot": "other",
+          "grounded": false,
+          "matched_target_id": null
+        },
+        {
+          "rank": 2,
+          "raw": "What specific activities or movements make your lower back pain worse?",
+          "domain": "musculoskeletal",
+          "concept": "shoulder_pain",
+          "target_slot": "worsening_course",
+          "grounded": true,
+          "matched_target_id": "124938510_C05_T032"
+        },
+        {
+          "rank": 3,
+          "raw": "When do you notice the right pointer finger pain, particularly while typing or bending?",
+          "domain": "musculoskeletal",
+          "concept": "other",
+          "target_slot": "other",
+          "grounded": false,
+          "matched_target_id": null
+        },
+        {
+          "rank": 4,
+          "raw": "What specific tasks or movements cause the right shoulder pain when reaching overhead?",
+          "domain": "musculoskeletal",
+          "concept": "shoulder_pain",
+          "target_slot": "overhead_motion_trigger",
+          "grounded": true,
+          "matched_target_id": "124938510_C05_T027"
+        },
+        {
+          "rank": 5,
+          "raw": "How often do you experience feelings of worry or irritability?",
+          "domain": "musculoskeletal",
+          "concept": "other",
+          "target_slot": "other",
+          "grounded": false,
+          "matched_target_id": null
+        },
+        {
+          "rank": 6,
+          "raw": "Can you describe your typical work setup or desk arrangement?",
+          "domain": "musculoskeletal",
+          "concept": "other",
+          "target_slot": "other",
+          "grounded": false,
+          "matched_target_id": null
+        },
+        {
+          "rank": 7,
+          "raw": "On a scale of 1 to 10, what is your average pain level for your ankle, back, and finger?",
+          "domain": "musculoskeletal",
+          "concept": "other",
+          "target_slot": "other",
+          "grounded": false,
+          "matched_target_id": null
+        },
+        {
+          "rank": 8,
+          "raw": "Have you noticed any changes in your sleep patterns or energy levels?",
+          "domain": "musculoskeletal",
+          "concept": "other",
+          "target_slot": "other",
+          "grounded": false,
+          "matched_target_id": null
+        },
+        {
+          "rank": 9,
+          "raw": "How has your alcohol consumption been since your last visit?",
+          "domain": "musculoskeletal",
+          "concept": "other",
+          "target_slot": "other",
+          "grounded": false,
+          "matched_target_id": null
+        },
+        {
+          "rank": 10,
+          "raw": "Are you able to commit to trying yoga or meditation as part of your anxiety management plan?",
+          "domain": "musculoskeletal",
+          "concept": "other",
+          "target_slot": "other",
+          "grounded": false,
+          "matched_target_id": null
+        },
+        {
+          "rank": 11,
+          "raw": "Are there any times of day when your pain tends to be worse?",
+          "domain": "musculoskeletal",
+          "concept": "shoulder_pain",
+          "target_slot": "worsening_course",
+          "grounded": true,
+          "matched_target_id": null
+        },
+        {
+          "rank": 12,
+          "raw": "Have you started using any new over-the-counter medications for pain or inflammation?",
+          "domain": "musculoskeletal",
+          "concept": "other",
+          "target_slot": "other",
+          "grounded": false,
+          "matched_target_id": null
+        }
+      ],
+      "scores": {
+        "coverage": 0.2857,
+        "weighted_coverage": 0.3636,
+        "grounded_precision": 0.1667,
+        "top_5_coverage": 0.2857,
+        "top_10_coverage": 0.2857,
+        "matched_count": 2,
+        "total_targets": 7,
+        "total_generated": 12
+      },
+      "target_detail": [
+        {
+          "target_id": "124938510_C05_T026",
+          "concept": "shoulder_pain",
+          "target_slot": "duration",
+          "severity": "low",
+          "weight": 1,
+          "hit": false
+        },
+        {
+          "target_id": "124938510_C05_T027",
+          "concept": "shoulder_pain",
+          "target_slot": "overhead_motion_trigger",
+          "severity": "medium",
+          "weight": 2,
+          "hit": true,
+          "matched_by": "What specific tasks or movements cause the right shoulder pain when reaching overhead?",
+          "matched_rank": 4
+        },
+        {
+          "target_id": "124938510_C05_T028",
+          "concept": "shoulder_pain",
+          "target_slot": "injury_history",
+          "severity": "low",
+          "weight": 1,
+          "hit": false
+        },
+        {
+          "target_id": "124938510_C05_T029",
+          "concept": "shoulder_pain",
+          "target_slot": "weakness",
+          "severity": "medium",
+          "weight": 2,
+          "hit": false
+        },
+        {
+          "target_id": "124938510_C05_T030",
+          "concept": "shoulder_pain",
+          "target_slot": "neurologic_symptoms",
+          "severity": "medium",
+          "weight": 2,
+          "hit": false
+        },
+        {
+          "target_id": "124938510_C05_T031",
+          "concept": "shoulder_pain",
+          "target_slot": "swelling_redness_bruising",
+          "severity": "low",
+          "weight": 1,
+          "hit": false
+        },
+        {
+          "target_id": "124938510_C05_T032",
+          "concept": "shoulder_pain",
+          "target_slot": "worsening_course",
+          "severity": "medium",
+          "weight": 2,
+          "hit": true,
+          "matched_by": "What specific activities or movements make your lower back pain worse?",
+          "matched_rank": 2
+        }
+      ],
+      "unmatched_questions": [
+        {
+          "rank": 1,
+          "raw": "How has the left ankle pain and swelling changed over the past week?",
+          "domain": "musculoskeletal",
+          "concept": "other",
+          "target_slot": "other"
+        },
+        {
+          "rank": 3,
+          "raw": "When do you notice the right pointer finger pain, particularly while typing or bending?",
+          "domain": "musculoskeletal",
+          "concept": "other",
+          "target_slot": "other"
+        },
+        {
+          "rank": 5,
+          "raw": "How often do you experience feelings of worry or irritability?",
+          "domain": "musculoskeletal",
+          "concept": "other",
+          "target_slot": "other"
+        },
+        {
+          "rank": 6,
+          "raw": "Can you describe your typical work setup or desk arrangement?",
+          "domain": "musculoskeletal",
+          "concept": "other",
+          "target_slot": "other"
+        },
+        {
+          "rank": 7,
+          "raw": "On a scale of 1 to 10, what is your average pain level for your ankle, back, and finger?",
+          "domain": "musculoskeletal",
+          "concept": "other",
+          "target_slot": "other"
+        },
+        {
+          "rank": 8,
+          "raw": "Have you noticed any changes in your sleep patterns or energy levels?",
+          "domain": "musculoskeletal",
+          "concept": "other",
+          "target_slot": "other"
+        },
+        {
+          "rank": 9,
+          "raw": "How has your alcohol consumption been since your last visit?",
+          "domain": "musculoskeletal",
+          "concept": "other",
+          "target_slot": "other"
+        },
+        {
+          "rank": 10,
+          "raw": "Are you able to commit to trying yoga or meditation as part of your anxiety management plan?",
+          "domain": "musculoskeletal",
+          "concept": "other",
+          "target_slot": "other"
+        },
+        {
+          "rank": 11,
+          "raw": "Are there any times of day when your pain tends to be worse?",
+          "domain": "musculoskeletal",
+          "concept": "shoulder_pain",
+          "target_slot": "worsening_course"
+        },
+        {
+          "rank": 12,
+          "raw": "Have you started using any new over-the-counter medications for pain or inflammation?",
+          "domain": "musculoskeletal",
+          "concept": "other",
+          "target_slot": "other"
+        }
+      ],
+      "gen_meta": {
+        "model": "gemma4:e4b",
+        "raw_output": "1. How has the left ankle pain and swelling changed over the past week?\n2. What specific activities or movements make your lower back pain worse?\n3. When do you notice the right pointer finger pain, particularly while typing or bending?\n4. What specific tasks or movements cause the right shoulder pain when reaching overhead?\n5. How often do you experience feelings of worry or irritability?\n6. Can you describe your typical work setup or desk arrangement?\n7. On a scale of 1 to 10, what is your average pain level for your ankle, back, and finger?\n8. Have you noticed any changes in your sleep patterns or energy levels?\n9. How has your alcohol consumption been since your last visit?\n10. Are you able to commit to trying yoga or meditation as part of your anxiety management plan?\n11. Are there any times of day when your pain tends to be worse?\n12. Have you started using any new over-the-counter medications for pain or inflammation?",
+        "input_chars": 5019,
+        "usage": {
+          "prompt_tokens": 1493,
+          "completion_tokens": 1146
+        }
+      }
+    },
+    {
+      "case_id": "124938510_C06",
+      "case_domain": "psychiatry",
+      "case_name": "Anxiety before later escalation",
+      "note_count": 1,
+      "char_count": 5019,
+      "generated_questions": [
+        {
+          "rank": 1,
+          "raw": "How often do you experience feelings of worry or irritability?",
+          "domain": "psychiatry",
+          "concept": "anxiety",
+          "target_slot": "worry",
+          "grounded": true,
+          "matched_target_id": "124938510_C06_T033"
+        },
+        {
+          "rank": 2,
+          "raw": "Are there specific situations or times of day when your anxiety feels worse?",
+          "domain": "psychiatry",
+          "concept": "anxiety",
+          "target_slot": "worry",
+          "grounded": true,
+          "matched_target_id": null
+        },
+        {
+          "rank": 3,
+          "raw": "How has your anxiety impacted your ability to work or perform daily activities?",
+          "domain": "psychiatry",
+          "concept": "anxiety",
+          "target_slot": "worry",
+          "grounded": true,
+          "matched_target_id": null
+        },
+        {
+          "rank": 4,
+          "raw": "When does the lower back pain usually occur?",
+          "domain": "psychiatry",
+          "concept": "other",
+          "target_slot": "other",
+          "grounded": false,
+          "matched_target_id": null
+        },
+        {
+          "rank": 5,
+          "raw": "What specific movements or activities make your lower back pain worse?",
+          "domain": "psychiatry",
+          "concept": "other",
+          "target_slot": "other",
+          "grounded": false,
+          "matched_target_id": null
+        },
+        {
+          "rank": 6,
+          "raw": "What activities, besides riding your bike, make your left ankle pain worse?",
+          "domain": "psychiatry",
+          "concept": "other",
+          "target_slot": "other",
+          "grounded": false,
+          "matched_target_id": null
+        },
+        {
+          "rank": 7,
+          "raw": "How does the ankle pain affect your ability to walk or bear weight?",
+          "domain": "psychiatry",
+          "concept": "other",
+          "target_slot": "other",
+          "grounded": false,
+          "matched_target_id": null
+        },
+        {
+          "rank": 8,
+          "raw": "What specific tasks or actions cause the pain in your right pointer finger?",
+          "domain": "psychiatry",
+          "concept": "other",
+          "target_slot": "other",
+          "grounded": false,
+          "matched_target_id": null
+        },
+        {
+          "rank": 9,
+          "raw": "What specific movements or reaching patterns cause the pain in your right shoulder?",
+          "domain": "psychiatry",
+          "concept": "other",
+          "target_slot": "other",
+          "grounded": false,
+          "matched_target_id": null
+        },
+        {
+          "rank": 10,
+          "raw": "How often do you consume alcohol?",
+          "domain": "psychiatry",
+          "concept": "other",
+          "target_slot": "other",
+          "grounded": false,
+          "matched_target_id": null
+        },
+        {
+          "rank": 11,
+          "raw": "Have you noticed any changes in your sleep patterns due to your anxiety or pain?",
+          "domain": "psychiatry",
+          "concept": "anxiety",
+          "target_slot": "worry",
+          "grounded": true,
+          "matched_target_id": null
+        },
+        {
+          "rank": 12,
+          "raw": "How has your overall energy level been recently?",
+          "domain": "psychiatry",
+          "concept": "depression",
+          "target_slot": "low_motivation",
+          "grounded": true,
+          "matched_target_id": "124938510_C06_T036"
+        },
+        {
+          "rank": 13,
+          "raw": "Are there any times when the pain in your ankle, back, or finger is worse?",
+          "domain": "psychiatry",
+          "concept": "other",
+          "target_slot": "other",
+          "grounded": false,
+          "matched_target_id": null
+        }
+      ],
+      "scores": {
+        "coverage": 0.25,
+        "weighted_coverage": 0.2667,
+        "grounded_precision": 0.1538,
+        "top_5_coverage": 0.125,
+        "top_10_coverage": 0.125,
+        "matched_count": 2,
+        "total_targets": 8,
+        "total_generated": 13
+      },
+      "target_detail": [
+        {
+          "target_id": "124938510_C06_T033",
+          "concept": "anxiety",
+          "target_slot": "worry",
+          "severity": "medium",
+          "weight": 2,
+          "hit": true,
+          "matched_by": "How often do you experience feelings of worry or irritability?",
+          "matched_rank": 1
+        },
+        {
+          "target_id": "124938510_C06_T034",
+          "concept": "anxiety",
+          "target_slot": "irritability",
+          "severity": "medium",
+          "weight": 2,
+          "hit": false
+        },
+        {
+          "target_id": "124938510_C06_T035",
+          "concept": "anxiety",
+          "target_slot": "functional_impact",
+          "severity": "medium",
+          "weight": 2,
+          "hit": false
+        },
+        {
+          "target_id": "124938510_C06_T036",
+          "concept": "depression",
+          "target_slot": "low_motivation",
+          "severity": "medium",
+          "weight": 2,
+          "hit": true,
+          "matched_by": "How has your overall energy level been recently?",
+          "matched_rank": 12
+        },
+        {
+          "target_id": "124938510_C06_T037",
+          "concept": "depression",
+          "target_slot": "anhedonia",
+          "severity": "medium",
+          "weight": 2,
+          "hit": false
+        },
+        {
+          "target_id": "124938510_C06_T038",
+          "concept": "depression",
+          "target_slot": "suicidality",
+          "severity": "high",
+          "weight": 3,
+          "hit": false
+        },
+        {
+          "target_id": "124938510_C06_T039",
+          "concept": "anxiety",
+          "target_slot": "prior_therapy",
+          "severity": "low",
+          "weight": 1,
+          "hit": false
+        },
+        {
+          "target_id": "124938510_C06_T040",
+          "concept": "depression",
+          "target_slot": "family_history",
+          "severity": "low",
+          "weight": 1,
+          "hit": false
+        }
+      ],
+      "unmatched_questions": [
+        {
+          "rank": 2,
+          "raw": "Are there specific situations or times of day when your anxiety feels worse?",
+          "domain": "psychiatry",
+          "concept": "anxiety",
+          "target_slot": "worry"
+        },
+        {
+          "rank": 3,
+          "raw": "How has your anxiety impacted your ability to work or perform daily activities?",
+          "domain": "psychiatry",
+          "concept": "anxiety",
+          "target_slot": "worry"
+        },
+        {
+          "rank": 4,
+          "raw": "When does the lower back pain usually occur?",
+          "domain": "psychiatry",
+          "concept": "other",
+          "target_slot": "other"
+        },
+        {
+          "rank": 5,
+          "raw": "What specific movements or activities make your lower back pain worse?",
+          "domain": "psychiatry",
+          "concept": "other",
+          "target_slot": "other"
+        },
+        {
+          "rank": 6,
+          "raw": "What activities, besides riding your bike, make your left ankle pain worse?",
+          "domain": "psychiatry",
+          "concept": "other",
+          "target_slot": "other"
+        },
+        {
+          "rank": 7,
+          "raw": "How does the ankle pain affect your ability to walk or bear weight?",
+          "domain": "psychiatry",
+          "concept": "other",
+          "target_slot": "other"
+        },
+        {
+          "rank": 8,
+          "raw": "What specific tasks or actions cause the pain in your right pointer finger?",
+          "domain": "psychiatry",
+          "concept": "other",
+          "target_slot": "other"
+        },
+        {
+          "rank": 9,
+          "raw": "What specific movements or reaching patterns cause the pain in your right shoulder?",
+          "domain": "psychiatry",
+          "concept": "other",
+          "target_slot": "other"
+        },
+        {
+          "rank": 10,
+          "raw": "How often do you consume alcohol?",
+          "domain": "psychiatry",
+          "concept": "other",
+          "target_slot": "other"
+        },
+        {
+          "rank": 11,
+          "raw": "Have you noticed any changes in your sleep patterns due to your anxiety or pain?",
+          "domain": "psychiatry",
+          "concept": "anxiety",
+          "target_slot": "worry"
+        },
+        {
+          "rank": 13,
+          "raw": "Are there any times when the pain in your ankle, back, or finger is worse?",
+          "domain": "psychiatry",
+          "concept": "other",
+          "target_slot": "other"
+        }
+      ],
+      "gen_meta": {
+        "model": "gemma4:e4b",
+        "raw_output": "1. How often do you experience feelings of worry or irritability?\n2. Are there specific situations or times of day when your anxiety feels worse?\n3. How has your anxiety impacted your ability to work or perform daily activities?\n4. When does the lower back pain usually occur?\n5. What specific movements or activities make your lower back pain worse?\n6. What activities, besides riding your bike, make your left ankle pain worse?\n7. How does the ankle pain affect your ability to walk or bear weight?\n8. What specific tasks or actions cause the pain in your right pointer finger?\n9. What specific movements or reaching patterns cause the pain in your right shoulder?\n10. How often do you consume alcohol?\n11. Have you noticed any changes in your sleep patterns due to your anxiety or pain?\n12. How has your overall energy level been recently?\n13. Are there any times when the pain in your ankle, back, or finger is worse?",
+        "input_chars": 5019,
+        "usage": {
+          "prompt_tokens": 1493,
+          "completion_tokens": 960
+        }
+      }
+    },
+    {
+      "case_id": "124938510_C07",
+      "case_domain": "psychiatry",
+      "case_name": "Depression and anxiety before medication/referral",
+      "note_count": 2,
+      "char_count": 36410,
+      "generated_questions": [
+        {
+          "rank": 1,
+          "raw": "How have your feelings of worry or anxiety been since our last visit?",
+          "domain": "psychiatry",
+          "concept": "other",
+          "target_slot": "other",
+          "grounded": false,
+          "matched_target_id": null
+        },
+        {
+          "rank": 2,
+          "raw": "Are there specific times or situations when your anxiety or depressed mood feels worse?",
+          "domain": "psychiatry",
+          "concept": "other",
+          "target_slot": "other",
+          "grounded": false,
+          "matched_target_id": null
+        },
+        {
+          "rank": 3,
+          "raw": "Have you noticed any changes in your energy levels or motivation since we last spoke?",
+          "domain": "psychiatry",
+          "concept": "other",
+          "target_slot": "other",
+          "grounded": false,
+          "matched_target_id": null
+        },
+        {
+          "rank": 4,
+          "raw": "How often are you currently consuming alcohol?",
+          "domain": "psychiatry",
+          "concept": "other",
+          "target_slot": "other",
+          "grounded": false,
+          "matched_target_id": null
+        },
+        {
+          "rank": 5,
+          "raw": "Have you noticed any changes in your eating habits or cravings for carbohydrates?",
+          "domain": "psychiatry",
+          "concept": "other",
+          "target_slot": "other",
+          "grounded": false,
+          "matched_target_id": null
+        },
+        {
+          "rank": 6,
+          "raw": "How is the chronic pain in your right shoulder right now?",
+          "domain": "psychiatry",
+          "concept": "other",
+          "target_slot": "other",
+          "grounded": false,
+          "matched_target_id": null
+        },
+        {
+          "rank": 7,
+          "raw": "Are you experiencing any pain or discomfort when reaching overhead?",
+          "domain": "psychiatry",
+          "concept": "other",
+          "target_slot": "other",
+          "grounded": false,
+          "matched_target_id": null
+        },
+        {
+          "rank": 8,
+          "raw": "Has the pain in your left ankle changed since the last time we discussed it?",
+          "domain": "psychiatry",
+          "concept": "other",
+          "target_slot": "other",
+          "grounded": false,
+          "matched_target_id": null
+        },
+        {
+          "rank": 9,
+          "raw": "Is the pain in your right pointer finger still bothersome when typing or bending?",
+          "domain": "psychiatry",
+          "concept": "other",
+          "target_slot": "other",
+          "grounded": false,
+          "matched_target_id": null
+        },
+        {
+          "rank": 10,
+          "raw": "Are you experiencing any new aches, pains, or symptoms in any part of your body?",
+          "domain": "psychiatry",
+          "concept": "other",
+          "target_slot": "other",
+          "grounded": false,
+          "matched_target_id": null
+        },
+        {
+          "rank": 11,
+          "raw": "Have you been able to incorporate any of the recommended exercises for your shoulder?",
+          "domain": "psychiatry",
+          "concept": "other",
+          "target_slot": "other",
+          "grounded": false,
+          "matched_target_id": null
+        },
+        {
+          "rank": 12,
+          "raw": "Are there any new stressors or changes in your social support system?",
+          "domain": "psychiatry",
+          "concept": "depression",
+          "target_slot": "social_withdrawal",
+          "grounded": true,
+          "matched_target_id": "124938510_C07_T041"
+        }
+      ],
+      "scores": {
+        "coverage": 0.2,
+        "weighted_coverage": 0.2857,
+        "grounded_precision": 0.0833,
+        "top_5_coverage": 0.0,
+        "top_10_coverage": 0.0,
+        "matched_count": 1,
+        "total_targets": 5,
+        "total_generated": 12
+      },
+      "target_detail": [
+        {
+          "target_id": "124938510_C07_T041",
+          "concept": "depression",
+          "target_slot": "social_withdrawal",
+          "severity": "medium",
+          "weight": 2,
+          "hit": true,
+          "matched_by": "Are there any new stressors or changes in your social support system?",
+          "matched_rank": 12
+        },
+        {
+          "target_id": "124938510_C07_T042",
+          "concept": "depression",
+          "target_slot": "low_libido",
+          "severity": "low",
+          "weight": 1,
+          "hit": false
+        },
+        {
+          "target_id": "124938510_C07_T043",
+          "concept": "bupropion_therapy",
+          "target_slot": "medication_readiness",
+          "severity": "medium",
+          "weight": 2,
+          "hit": false
+        },
+        {
+          "target_id": "124938510_C07_T044",
+          "concept": "bupropion_therapy",
+          "target_slot": "medication_tolerance",
+          "severity": "low",
+          "weight": 1,
+          "hit": false
+        },
+        {
+          "target_id": "124938510_C07_T045",
+          "concept": "psychiatry_referral",
+          "target_slot": "therapy_interest",
+          "severity": "low",
+          "weight": 1,
+          "hit": false
+        }
+      ],
+      "unmatched_questions": [
+        {
+          "rank": 1,
+          "raw": "How have your feelings of worry or anxiety been since our last visit?",
+          "domain": "psychiatry",
+          "concept": "other",
+          "target_slot": "other"
+        },
+        {
+          "rank": 2,
+          "raw": "Are there specific times or situations when your anxiety or depressed mood feels worse?",
+          "domain": "psychiatry",
+          "concept": "other",
+          "target_slot": "other"
+        },
+        {
+          "rank": 3,
+          "raw": "Have you noticed any changes in your energy levels or motivation since we last spoke?",
+          "domain": "psychiatry",
+          "concept": "other",
+          "target_slot": "other"
+        },
+        {
+          "rank": 4,
+          "raw": "How often are you currently consuming alcohol?",
+          "domain": "psychiatry",
+          "concept": "other",
+          "target_slot": "other"
+        },
+        {
+          "rank": 5,
+          "raw": "Have you noticed any changes in your eating habits or cravings for carbohydrates?",
+          "domain": "psychiatry",
+          "concept": "other",
+          "target_slot": "other"
+        },
+        {
+          "rank": 6,
+          "raw": "How is the chronic pain in your right shoulder right now?",
+          "domain": "psychiatry",
+          "concept": "other",
+          "target_slot": "other"
+        },
+        {
+          "rank": 7,
+          "raw": "Are you experiencing any pain or discomfort when reaching overhead?",
+          "domain": "psychiatry",
+          "concept": "other",
+          "target_slot": "other"
+        },
+        {
+          "rank": 8,
+          "raw": "Has the pain in your left ankle changed since the last time we discussed it?",
+          "domain": "psychiatry",
+          "concept": "other",
+          "target_slot": "other"
+        },
+        {
+          "rank": 9,
+          "raw": "Is the pain in your right pointer finger still bothersome when typing or bending?",
+          "domain": "psychiatry",
+          "concept": "other",
+          "target_slot": "other"
+        },
+        {
+          "rank": 10,
+          "raw": "Are you experiencing any new aches, pains, or symptoms in any part of your body?",
+          "domain": "psychiatry",
+          "concept": "other",
+          "target_slot": "other"
+        },
+        {
+          "rank": 11,
+          "raw": "Have you been able to incorporate any of the recommended exercises for your shoulder?",
+          "domain": "psychiatry",
+          "concept": "other",
+          "target_slot": "other"
+        }
+      ],
+      "gen_meta": {
+        "model": "gemma4:e4b",
+        "raw_output": "1. How have your feelings of worry or anxiety been since our last visit?\n2. Are there specific times or situations when your anxiety or depressed mood feels worse?\n3. Have you noticed any changes in your energy levels or motivation since we last spoke?\n4. How often are you currently consuming alcohol?\n5. Have you noticed any changes in your eating habits or cravings for carbohydrates?\n6. How is the chronic pain in your right shoulder right now?\n7. Are you experiencing any pain or discomfort when reaching overhead?\n8. Has the pain in your left ankle changed since the last time we discussed it?\n9. Is the pain in your right pointer finger still bothersome when typing or bending?\n10. Are you experiencing any new aches, pains, or symptoms in any part of your body?\n11. Have you been able to incorporate any of the recommended exercises for your shoulder?\n12. Are there any new stressors or changes in your social support system?",
+        "input_chars": 36410,
+        "usage": {
+          "prompt_tokens": 9662,
+          "completion_tokens": 1095
+        }
+      }
+    },
+    {
+      "case_id": "124938510_C08",
+      "case_domain": "cardiology",
+      "case_name": "Hyperlipidemia plus family history and tachycardia before cardiac workup",
+      "note_count": 1,
+      "char_count": 31390,
+      "generated_questions": [
+        {
+          "rank": 1,
+          "raw": "Have you experienced any chest pain, shortness of breath, dizziness, or lightheadedness, especially when exercising or under stress?",
+          "domain": "cardiology",
+          "concept": "tachycardia",
+          "target_slot": "syncope_presyncope",
+          "grounded": true,
+          "matched_target_id": "124938510_C08_T052"
+        },
+        {
+          "rank": 2,
+          "raw": "Can you describe the typical feelings or situations that trigger your anxiety?",
+          "domain": "cardiology",
+          "concept": "other",
+          "target_slot": "other",
+          "grounded": false,
+          "matched_target_id": null
+        },
+        {
+          "rank": 3,
+          "raw": "How often do you find yourself losing interest or pleasure in activities you usually enjoy?",
+          "domain": "cardiology",
+          "concept": "other",
+          "target_slot": "other",
+          "grounded": false,
+          "matched_target_id": null
+        },
+        {
+          "rank": 4,
+          "raw": "Does your right shoulder pain get worse at certain times of day, or is it worse when you wake up?",
+          "domain": "cardiology",
+          "concept": "other",
+          "target_slot": "other",
+          "grounded": false,
+          "matched_target_id": null
+        },
+        {
+          "rank": 5,
+          "raw": "What specific movements or activities make your right shoulder pain worse?",
+          "domain": "cardiology",
+          "concept": "other",
+          "target_slot": "other",
+          "grounded": false,
+          "matched_target_id": null
+        },
+        {
+          "rank": 6,
+          "raw": "How has your diet changed since you started trying to manage your cholesterol?",
+          "domain": "cardiology",
+          "concept": "other",
+          "target_slot": "other",
+          "grounded": false,
+          "matched_target_id": null
+        },
+        {
+          "rank": 7,
+          "raw": "On a typical week, how many alcoholic drinks do you consume?",
+          "domain": "cardiology",
+          "concept": "other",
+          "target_slot": "other",
+          "grounded": false,
+          "matched_target_id": null
+        },
+        {
+          "rank": 8,
+          "raw": "When did you first notice the decrease in your sex drive?",
+          "domain": "cardiology",
+          "concept": "other",
+          "target_slot": "other",
+          "grounded": false,
+          "matched_target_id": null
+        },
+        {
+          "rank": 9,
+          "raw": "Are there any other changes in your body or routine that concern you?",
+          "domain": "cardiology",
+          "concept": "other",
+          "target_slot": "other",
+          "grounded": false,
+          "matched_target_id": null
+        },
+        {
+          "rank": 10,
+          "raw": "Have you noticed any changes in your sleep patterns or quality?",
+          "domain": "cardiology",
+          "concept": "other",
+          "target_slot": "other",
+          "grounded": false,
+          "matched_target_id": null
+        },
+        {
+          "rank": 11,
+          "raw": "Are there any specific times or situations where your anxiety feels overwhelming?",
+          "domain": "cardiology",
+          "concept": "other",
+          "target_slot": "other",
+          "grounded": false,
+          "matched_target_id": null
+        },
+        {
+          "rank": 12,
+          "raw": "Do you feel that your current level of physical activity is helping or hindering your shoulder pain?",
+          "domain": "cardiology",
+          "concept": "other",
+          "target_slot": "other",
+          "grounded": false,
+          "matched_target_id": null
+        }
+      ],
+      "scores": {
+        "coverage": 0.1429,
+        "weighted_coverage": 0.1667,
+        "grounded_precision": 0.0833,
+        "top_5_coverage": 0.1429,
+        "top_10_coverage": 0.1429,
+        "matched_count": 1,
+        "total_targets": 7,
+        "total_generated": 12
+      },
+      "target_detail": [
+        {
+          "target_id": "124938510_C08_T046",
+          "concept": "hyperlipidemia",
+          "target_slot": "statin_history",
+          "severity": "medium",
+          "weight": 2,
+          "hit": false
+        },
+        {
+          "target_id": "124938510_C08_T047",
+          "concept": "coronary_artery_disease_risk",
+          "target_slot": "family_history_premature_cad",
+          "severity": "high",
+          "weight": 3,
+          "hit": false
+        },
+        {
+          "target_id": "124938510_C08_T048",
+          "concept": "tachycardia",
+          "target_slot": "palpitations",
+          "severity": "medium",
+          "weight": 2,
+          "hit": false
+        },
+        {
+          "target_id": "124938510_C08_T049",
+          "concept": "tachycardia",
+          "target_slot": "fast_pulse_history",
+          "severity": "medium",
+          "weight": 2,
+          "hit": false
+        },
+        {
+          "target_id": "124938510_C08_T050",
+          "concept": "coronary_artery_disease_risk",
+          "target_slot": "chest_pain",
+          "severity": "high",
+          "weight": 3,
+          "hit": false
+        },
+        {
+          "target_id": "124938510_C08_T051",
+          "concept": "coronary_artery_disease_risk",
+          "target_slot": "exertional_dyspnea",
+          "severity": "high",
+          "weight": 3,
+          "hit": false
+        },
+        {
+          "target_id": "124938510_C08_T052",
+          "concept": "tachycardia",
+          "target_slot": "syncope_presyncope",
+          "severity": "high",
+          "weight": 3,
+          "hit": true,
+          "matched_by": "Have you experienced any chest pain, shortness of breath, dizziness, or lightheadedness, especially when exercising or under stress?",
+          "matched_rank": 1
+        }
+      ],
+      "unmatched_questions": [
+        {
+          "rank": 2,
+          "raw": "Can you describe the typical feelings or situations that trigger your anxiety?",
+          "domain": "cardiology",
+          "concept": "other",
+          "target_slot": "other"
+        },
+        {
+          "rank": 3,
+          "raw": "How often do you find yourself losing interest or pleasure in activities you usually enjoy?",
+          "domain": "cardiology",
+          "concept": "other",
+          "target_slot": "other"
+        },
+        {
+          "rank": 4,
+          "raw": "Does your right shoulder pain get worse at certain times of day, or is it worse when you wake up?",
+          "domain": "cardiology",
+          "concept": "other",
+          "target_slot": "other"
+        },
+        {
+          "rank": 5,
+          "raw": "What specific movements or activities make your right shoulder pain worse?",
+          "domain": "cardiology",
+          "concept": "other",
+          "target_slot": "other"
+        },
+        {
+          "rank": 6,
+          "raw": "How has your diet changed since you started trying to manage your cholesterol?",
+          "domain": "cardiology",
+          "concept": "other",
+          "target_slot": "other"
+        },
+        {
+          "rank": 7,
+          "raw": "On a typical week, how many alcoholic drinks do you consume?",
+          "domain": "cardiology",
+          "concept": "other",
+          "target_slot": "other"
+        },
+        {
+          "rank": 8,
+          "raw": "When did you first notice the decrease in your sex drive?",
+          "domain": "cardiology",
+          "concept": "other",
+          "target_slot": "other"
+        },
+        {
+          "rank": 9,
+          "raw": "Are there any other changes in your body or routine that concern you?",
+          "domain": "cardiology",
+          "concept": "other",
+          "target_slot": "other"
+        },
+        {
+          "rank": 10,
+          "raw": "Have you noticed any changes in your sleep patterns or quality?",
+          "domain": "cardiology",
+          "concept": "other",
+          "target_slot": "other"
+        },
+        {
+          "rank": 11,
+          "raw": "Are there any specific times or situations where your anxiety feels overwhelming?",
+          "domain": "cardiology",
+          "concept": "other",
+          "target_slot": "other"
+        },
+        {
+          "rank": 12,
+          "raw": "Do you feel that your current level of physical activity is helping or hindering your shoulder pain?",
+          "domain": "cardiology",
+          "concept": "other",
+          "target_slot": "other"
+        }
+      ],
+      "gen_meta": {
+        "model": "gemma4:e4b",
+        "raw_output": "1. Have you experienced any chest pain, shortness of breath, dizziness, or lightheadedness, especially when exercising or under stress?\n2. Can you describe the typical feelings or situations that trigger your anxiety?\n3. How often do you find yourself losing interest or pleasure in activities you usually enjoy?\n4. Does your right shoulder pain get worse at certain times of day, or is it worse when you wake up?\n5. What specific movements or activities make your right shoulder pain worse?\n6. How has your diet changed since you started trying to manage your cholesterol?\n7. On a typical week, how many alcoholic drinks do you consume?\n8. When did you first notice the decrease in your sex drive?\n9. Are there any other changes in your body or routine that concern you?\n10. Have you noticed any changes in your sleep patterns or quality?\n11. Are there any specific times or situations where your anxiety feels overwhelming?\n12. Do you feel that your current level of physical activity is helping or hindering your shoulder pain?",
+        "input_chars": 31390,
+        "usage": {
+          "prompt_tokens": 8293,
+          "completion_tokens": 1215
+        }
+      }
+    },
+    {
+      "case_id": "124938510_C09",
+      "case_domain": "cardiology",
+      "case_name": "Very high calcium score before specialty workup matures",
+      "note_count": 2,
+      "char_count": 48872,
+      "generated_questions": [
+        {
+          "rank": 1,
+          "raw": "Can you describe the palpitations, including how often they occur and what they feel like?",
+          "domain": "cardiology",
+          "concept": "other",
+          "target_slot": "other",
+          "grounded": false,
+          "matched_target_id": null
+        },
+        {
+          "rank": 2,
+          "raw": "Have you experienced any chest pain, shortness of breath, or dizziness, especially when exerting yourself?",
+          "domain": "cardiology",
+          "concept": "tachycardia",
+          "target_slot": "exertional_symptoms",
+          "grounded": true,
+          "matched_target_id": "124938510_C09_T058"
+        },
+        {
+          "rank": 3,
+          "raw": "What specific activities or situations tend to trigger your palpitations or heart symptoms?",
+          "domain": "cardiology",
+          "concept": "other",
+          "target_slot": "other",
+          "grounded": false,
+          "matched_target_id": null
+        },
+        {
+          "rank": 4,
+          "raw": "How has your diet been since our last visit, particularly regarding carbohydrate intake?",
+          "domain": "cardiology",
+          "concept": "other",
+          "target_slot": "other",
+          "grounded": false,
+          "matched_target_id": null
+        },
+        {
+          "rank": 5,
+          "raw": "Are you experiencing any side effects from the new medication (Wellbutrin)?",
+          "domain": "cardiology",
+          "concept": "statin_therapy",
+          "target_slot": "side_effect_history",
+          "grounded": true,
+          "matched_target_id": "124938510_C09_T055"
+        },
+        {
+          "rank": 6,
+          "raw": "How has your anxiety or mood been since starting the medication?",
+          "domain": "cardiology",
+          "concept": "other",
+          "target_slot": "other",
+          "grounded": false,
+          "matched_target_id": null
+        },
+        {
+          "rank": 7,
+          "raw": "What is your current sleep pattern, and do you notice any changes in snoring or fatigue?",
+          "domain": "cardiology",
+          "concept": "sleep_apnea",
+          "target_slot": "snoring",
+          "grounded": true,
+          "matched_target_id": "124938510_C09_T056"
+        },
+        {
+          "rank": 8,
+          "raw": "When does the right shoulder pain feel the worst?",
+          "domain": "cardiology",
+          "concept": "other",
+          "target_slot": "other",
+          "grounded": false,
+          "matched_target_id": null
+        },
+        {
+          "rank": 9,
+          "raw": "Are there any specific movements or activities that make your shoulder pain worse?",
+          "domain": "cardiology",
+          "concept": "other",
+          "target_slot": "other",
+          "grounded": false,
+          "matched_target_id": null
+        },
+        {
+          "rank": 10,
+          "raw": "How often are you currently consuming alcohol?",
+          "domain": "cardiology",
+          "concept": "other",
+          "target_slot": "other",
+          "grounded": false,
+          "matched_target_id": null
+        },
+        {
+          "rank": 11,
+          "raw": "Have you noticed any changes in your libido or sex drive?",
+          "domain": "cardiology",
+          "concept": "other",
+          "target_slot": "other",
+          "grounded": false,
+          "matched_target_id": null
+        },
+        {
+          "rank": 12,
+          "raw": "Are there any other symptoms or concerns that have developed since your last visit?",
+          "domain": "cardiology",
+          "concept": "other",
+          "target_slot": "other",
+          "grounded": false,
+          "matched_target_id": null
+        },
+        {
+          "rank": 13,
+          "raw": "Do you have any specific symptoms or warning signs to watch out for while traveling to Germany?",
+          "domain": "cardiology",
+          "concept": "coronary_artery_disease_risk",
+          "target_slot": "travel_safety_concern",
+          "grounded": true,
+          "matched_target_id": "124938510_C09_T053"
+        }
+      ],
+      "scores": {
+        "coverage": 0.5714,
+        "weighted_coverage": 0.6154,
+        "grounded_precision": 0.3077,
+        "top_5_coverage": 0.2857,
+        "top_10_coverage": 0.4286,
+        "matched_count": 4,
+        "total_targets": 7,
+        "total_generated": 13
+      },
+      "target_detail": [
+        {
+          "target_id": "124938510_C09_T053",
+          "concept": "coronary_artery_disease_risk",
+          "target_slot": "travel_safety_concern",
+          "severity": "medium",
+          "weight": 2,
+          "hit": true,
+          "matched_by": "Do you have any specific symptoms or warning signs to watch out for while traveling to Germany?",
+          "matched_rank": 13
+        },
+        {
+          "target_id": "124938510_C09_T054",
+          "concept": "aspirin_therapy",
+          "target_slot": "bleeding_history",
+          "severity": "medium",
+          "weight": 2,
+          "hit": false
+        },
+        {
+          "target_id": "124938510_C09_T055",
+          "concept": "statin_therapy",
+          "target_slot": "side_effect_history",
+          "severity": "medium",
+          "weight": 2,
+          "hit": true,
+          "matched_by": "Are you experiencing any side effects from the new medication (Wellbutrin)?",
+          "matched_rank": 5
+        },
+        {
+          "target_id": "124938510_C09_T056",
+          "concept": "sleep_apnea",
+          "target_slot": "snoring",
+          "severity": "low",
+          "weight": 1,
+          "hit": true,
+          "matched_by": "What is your current sleep pattern, and do you notice any changes in snoring or fatigue?",
+          "matched_rank": 7
+        },
+        {
+          "target_id": "124938510_C09_T057",
+          "concept": "sleep_apnea",
+          "target_slot": "fatigue",
+          "severity": "low",
+          "weight": 1,
+          "hit": false
+        },
+        {
+          "target_id": "124938510_C09_T058",
+          "concept": "tachycardia",
+          "target_slot": "exertional_symptoms",
+          "severity": "high",
+          "weight": 3,
+          "hit": true,
+          "matched_by": "Have you experienced any chest pain, shortness of breath, or dizziness, especially when exerting yourself?",
+          "matched_rank": 2
+        },
+        {
+          "target_id": "124938510_C09_T059",
+          "concept": "coronary_artery_disease_risk",
+          "target_slot": "medication_adherence",
+          "severity": "medium",
+          "weight": 2,
+          "hit": false
+        }
+      ],
+      "unmatched_questions": [
+        {
+          "rank": 1,
+          "raw": "Can you describe the palpitations, including how often they occur and what they feel like?",
+          "domain": "cardiology",
+          "concept": "other",
+          "target_slot": "other"
+        },
+        {
+          "rank": 3,
+          "raw": "What specific activities or situations tend to trigger your palpitations or heart symptoms?",
+          "domain": "cardiology",
+          "concept": "other",
+          "target_slot": "other"
+        },
+        {
+          "rank": 4,
+          "raw": "How has your diet been since our last visit, particularly regarding carbohydrate intake?",
+          "domain": "cardiology",
+          "concept": "other",
+          "target_slot": "other"
+        },
+        {
+          "rank": 6,
+          "raw": "How has your anxiety or mood been since starting the medication?",
+          "domain": "cardiology",
+          "concept": "other",
+          "target_slot": "other"
+        },
+        {
+          "rank": 8,
+          "raw": "When does the right shoulder pain feel the worst?",
+          "domain": "cardiology",
+          "concept": "other",
+          "target_slot": "other"
+        },
+        {
+          "rank": 9,
+          "raw": "Are there any specific movements or activities that make your shoulder pain worse?",
+          "domain": "cardiology",
+          "concept": "other",
+          "target_slot": "other"
+        },
+        {
+          "rank": 10,
+          "raw": "How often are you currently consuming alcohol?",
+          "domain": "cardiology",
+          "concept": "other",
+          "target_slot": "other"
+        },
+        {
+          "rank": 11,
+          "raw": "Have you noticed any changes in your libido or sex drive?",
+          "domain": "cardiology",
+          "concept": "other",
+          "target_slot": "other"
+        },
+        {
+          "rank": 12,
+          "raw": "Are there any other symptoms or concerns that have developed since your last visit?",
+          "domain": "cardiology",
+          "concept": "other",
+          "target_slot": "other"
+        }
+      ],
+      "gen_meta": {
+        "model": "gemma4:e4b",
+        "raw_output": "1. Can you describe the palpitations, including how often they occur and what they feel like?\n2. Have you experienced any chest pain, shortness of breath, or dizziness, especially when exerting yourself?\n3. What specific activities or situations tend to trigger your palpitations or heart symptoms?\n4. How has your diet been since our last visit, particularly regarding carbohydrate intake?\n5. Are you experiencing any side effects from the new medication (Wellbutrin)?\n6. How has your anxiety or mood been since starting the medication?\n7. What is your current sleep pattern, and do you notice any changes in snoring or fatigue?\n8. When does the right shoulder pain feel the worst?\n9. Are there any specific movements or activities that make your shoulder pain worse?\n10. How often are you currently consuming alcohol?\n11. Have you noticed any changes in your libido or sex drive?\n12. Are there any other symptoms or concerns that have developed since your last visit?\n13. Do you have any specific symptoms or warning signs to watch out for while traveling to Germany?",
+        "input_chars": 48872,
+        "usage": {
+          "prompt_tokens": 12813,
+          "completion_tokens": 906
+        }
+      }
+    },
+    {
+      "case_id": "124938510_C10",
+      "case_domain": "ophthalmology",
+      "case_name": "Abnormal eye exam with blurred vision before retina evaluation",
+      "note_count": 1,
+      "char_count": 8480,
+      "generated_questions": [
+        {
+          "rank": 1,
+          "raw": "Can you describe the blurred vision you have been experiencing?",
+          "domain": "ophthalmology",
+          "concept": "blurred_vision",
+          "target_slot": "visual_blurring",
+          "grounded": true,
+          "matched_target_id": "124938510_C10_T060"
+        },
+        {
+          "rank": 2,
+          "raw": "Has the blurred vision changed, gotten worse, or changed in any way since you first noticed it?",
+          "domain": "ophthalmology",
+          "concept": "blurred_vision",
+          "target_slot": "visual_blurring",
+          "grounded": true,
+          "matched_target_id": null
+        },
+        {
+          "rank": 3,
+          "raw": "Are you experiencing any eye pain, flashes of light, or floaters?",
+          "domain": "ophthalmology",
+          "concept": "other",
+          "target_slot": "other",
+          "grounded": false,
+          "matched_target_id": null
+        },
+        {
+          "rank": 4,
+          "raw": "Have you noticed any changes in your vision when reading or looking at certain distances?",
+          "domain": "ophthalmology",
+          "concept": "other",
+          "target_slot": "other",
+          "grounded": false,
+          "matched_target_id": null
+        },
+        {
+          "rank": 5,
+          "raw": "Have you had any symptoms of dizziness, lightheadedness, or fainting since your last visit?",
+          "domain": "ophthalmology",
+          "concept": "other",
+          "target_slot": "other",
+          "grounded": false,
+          "matched_target_id": null
+        },
+        {
+          "rank": 6,
+          "raw": "Have you noticed any unusual bruising, bleeding, or swelling anywhere on your body?",
+          "domain": "ophthalmology",
+          "concept": "other",
+          "target_slot": "other",
+          "grounded": false,
+          "matched_target_id": null
+        },
+        {
+          "rank": 7,
+          "raw": "Have you had any changes in your weight or appetite recently?",
+          "domain": "ophthalmology",
+          "concept": "other",
+          "target_slot": "other",
+          "grounded": false,
+          "matched_target_id": null
+        },
+        {
+          "rank": 8,
+          "raw": "Are you taking all of your medications (aspirin, atorvastatin, bupropion) exactly as prescribed?",
+          "domain": "ophthalmology",
+          "concept": "other",
+          "target_slot": "other",
+          "grounded": false,
+          "matched_target_id": null
+        },
+        {
+          "rank": 9,
+          "raw": "Have you experienced any side effects from any of your current medications?",
+          "domain": "ophthalmology",
+          "concept": "other",
+          "target_slot": "other",
+          "grounded": false,
+          "matched_target_id": null
+        },
+        {
+          "rank": 10,
+          "raw": "How often are you consuming alcohol, and is the amount consistent?",
+          "domain": "ophthalmology",
+          "concept": "other",
+          "target_slot": "other",
+          "grounded": false,
+          "matched_target_id": null
+        },
+        {
+          "rank": 11,
+          "raw": "Are you experiencing any pain in your knees or any other joints?",
+          "domain": "ophthalmology",
+          "concept": "other",
+          "target_slot": "other",
+          "grounded": false,
+          "matched_target_id": null
+        },
+        {
+          "rank": 12,
+          "raw": "Have you had any recent illnesses, infections, or fevers?",
+          "domain": "ophthalmology",
+          "concept": "other",
+          "target_slot": "other",
+          "grounded": false,
+          "matched_target_id": null
+        },
+        {
+          "rank": 13,
+          "raw": "Are you having any difficulty with your sleep patterns?",
+          "domain": "ophthalmology",
+          "concept": "other",
+          "target_slot": "other",
+          "grounded": false,
+          "matched_target_id": null
+        },
+        {
+          "rank": 14,
+          "raw": "Has your husband or son reported any changes in your general well-being or mood?",
+          "domain": "ophthalmology",
+          "concept": "other",
+          "target_slot": "other",
+          "grounded": false,
+          "matched_target_id": null
+        }
+      ],
+      "scores": {
+        "coverage": 0.25,
+        "weighted_coverage": 0.2857,
+        "grounded_precision": 0.0714,
+        "top_5_coverage": 0.25,
+        "top_10_coverage": 0.25,
+        "matched_count": 1,
+        "total_targets": 4,
+        "total_generated": 14
+      },
+      "target_detail": [
+        {
+          "target_id": "124938510_C10_T060",
+          "concept": "blurred_vision",
+          "target_slot": "visual_blurring",
+          "severity": "medium",
+          "weight": 2,
+          "hit": true,
+          "matched_by": "Can you describe the blurred vision you have been experiencing?",
+          "matched_rank": 1
+        },
+        {
+          "target_id": "124938510_C10_T061",
+          "concept": "blurred_vision",
+          "target_slot": "progressive_change",
+          "severity": "medium",
+          "weight": 2,
+          "hit": false
+        },
+        {
+          "target_id": "124938510_C10_T062",
+          "concept": "blurred_vision",
+          "target_slot": "laterality",
+          "severity": "low",
+          "weight": 1,
+          "hit": false
+        },
+        {
+          "target_id": "124938510_C10_T063",
+          "concept": "blurred_vision",
+          "target_slot": "central_vision_distortion",
+          "severity": "medium",
+          "weight": 2,
+          "hit": false
+        }
+      ],
+      "unmatched_questions": [
+        {
+          "rank": 2,
+          "raw": "Has the blurred vision changed, gotten worse, or changed in any way since you first noticed it?",
+          "domain": "ophthalmology",
+          "concept": "blurred_vision",
+          "target_slot": "visual_blurring"
+        },
+        {
+          "rank": 3,
+          "raw": "Are you experiencing any eye pain, flashes of light, or floaters?",
+          "domain": "ophthalmology",
+          "concept": "other",
+          "target_slot": "other"
+        },
+        {
+          "rank": 4,
+          "raw": "Have you noticed any changes in your vision when reading or looking at certain distances?",
+          "domain": "ophthalmology",
+          "concept": "other",
+          "target_slot": "other"
+        },
+        {
+          "rank": 5,
+          "raw": "Have you had any symptoms of dizziness, lightheadedness, or fainting since your last visit?",
+          "domain": "ophthalmology",
+          "concept": "other",
+          "target_slot": "other"
+        },
+        {
+          "rank": 6,
+          "raw": "Have you noticed any unusual bruising, bleeding, or swelling anywhere on your body?",
+          "domain": "ophthalmology",
+          "concept": "other",
+          "target_slot": "other"
+        },
+        {
+          "rank": 7,
+          "raw": "Have you had any changes in your weight or appetite recently?",
+          "domain": "ophthalmology",
+          "concept": "other",
+          "target_slot": "other"
+        },
+        {
+          "rank": 8,
+          "raw": "Are you taking all of your medications (aspirin, atorvastatin, bupropion) exactly as prescribed?",
+          "domain": "ophthalmology",
+          "concept": "other",
+          "target_slot": "other"
+        },
+        {
+          "rank": 9,
+          "raw": "Have you experienced any side effects from any of your current medications?",
+          "domain": "ophthalmology",
+          "concept": "other",
+          "target_slot": "other"
+        },
+        {
+          "rank": 10,
+          "raw": "How often are you consuming alcohol, and is the amount consistent?",
+          "domain": "ophthalmology",
+          "concept": "other",
+          "target_slot": "other"
+        },
+        {
+          "rank": 11,
+          "raw": "Are you experiencing any pain in your knees or any other joints?",
+          "domain": "ophthalmology",
+          "concept": "other",
+          "target_slot": "other"
+        },
+        {
+          "rank": 12,
+          "raw": "Have you had any recent illnesses, infections, or fevers?",
+          "domain": "ophthalmology",
+          "concept": "other",
+          "target_slot": "other"
+        },
+        {
+          "rank": 13,
+          "raw": "Are you having any difficulty with your sleep patterns?",
+          "domain": "ophthalmology",
+          "concept": "other",
+          "target_slot": "other"
+        },
+        {
+          "rank": 14,
+          "raw": "Has your husband or son reported any changes in your general well-being or mood?",
+          "domain": "ophthalmology",
+          "concept": "other",
+          "target_slot": "other"
+        }
+      ],
+      "gen_meta": {
+        "model": "gemma4:e4b",
+        "raw_output": "1. Can you describe the blurred vision you have been experiencing?\n2. Has the blurred vision changed, gotten worse, or changed in any way since you first noticed it?\n3. Are you experiencing any eye pain, flashes of light, or floaters?\n4. Have you noticed any changes in your vision when reading or looking at certain distances?\n5. Have you had any symptoms of dizziness, lightheadedness, or fainting since your last visit?\n6. Have you noticed any unusual bruising, bleeding, or swelling anywhere on your body?\n7. Have you had any changes in your weight or appetite recently?\n8. Are you taking all of your medications (aspirin, atorvastatin, bupropion) exactly as prescribed?\n9. Have you experienced any side effects from any of your current medications?\n10. How often are you consuming alcohol, and is the amount consistent?\n11. Are you experiencing any pain in your knees or any other joints?\n12. Have you had any recent illnesses, infections, or fevers?\n13. Are you having any difficulty with your sleep patterns?\n14. Has your husband or son reported any changes in your general well-being or mood?",
+        "input_chars": 8480,
+        "usage": {
+          "prompt_tokens": 2173,
+          "completion_tokens": 997
+        }
+      }
+    },
+    {
+      "case_id": "124938510_C11",
+      "case_domain": "musculoskeletal",
+      "case_name": "Bilateral foot pain and new atraumatic right knee pain",
+      "note_count": 1,
+      "char_count": 7836,
+      "generated_questions": [
+        {
+          "rank": 1,
+          "raw": "When is your right knee pain typically at its worst?",
+          "domain": "musculoskeletal",
+          "concept": "other",
+          "target_slot": "other",
+          "grounded": false,
+          "matched_target_id": null
+        },
+        {
+          "rank": 2,
+          "raw": "Does anything specific (like sitting, standing, or moving) make your right knee pain better or worse?",
+          "domain": "musculoskeletal",
+          "concept": "other",
+          "target_slot": "other",
+          "grounded": false,
+          "matched_target_id": null
+        },
+        {
+          "rank": 3,
+          "raw": "How does the knee pain feel when you are walking or climbing stairs?",
+          "domain": "musculoskeletal",
+          "concept": "other",
+          "target_slot": "other",
+          "grounded": false,
+          "matched_target_id": null
+        },
+        {
+          "rank": 4,
+          "raw": "Has the foot pain changed in pattern over the last five months?",
+          "domain": "musculoskeletal",
+          "concept": "other",
+          "target_slot": "other",
+          "grounded": false,
+          "matched_target_id": null
+        },
+        {
+          "rank": 5,
+          "raw": "Is the foot pain worse at a specific time of day, such as first thing in the morning?",
+          "domain": "musculoskeletal",
+          "concept": "other",
+          "target_slot": "other",
+          "grounded": false,
+          "matched_target_id": null
+        },
+        {
+          "rank": 6,
+          "raw": "Do you notice any specific types of shoes or activities that make the foot pain worse?",
+          "domain": "musculoskeletal",
+          "concept": "foot_pain",
+          "target_slot": "shoe_response",
+          "grounded": true,
+          "matched_target_id": "124938510_C11_T066"
+        },
+        {
+          "rank": 7,
+          "raw": "How has your activity level (walking/bicycling) changed since the pain started?",
+          "domain": "musculoskeletal",
+          "concept": "other",
+          "target_slot": "other",
+          "grounded": false,
+          "matched_target_id": null
+        },
+        {
+          "rank": 8,
+          "raw": "Are you currently experiencing any general symptoms like fatigue, unexplained weight changes, or fever?",
+          "domain": "musculoskeletal",
+          "concept": "other",
+          "target_slot": "other",
+          "grounded": false,
+          "matched_target_id": null
+        },
+        {
+          "rank": 9,
+          "raw": "Are you taking all of your current medications (aspirin, atorvastatin, bupropion) exactly as prescribed?",
+          "domain": "musculoskeletal",
+          "concept": "other",
+          "target_slot": "other",
+          "grounded": false,
+          "matched_target_id": null
+        },
+        {
+          "rank": 10,
+          "raw": "Have you noticed any changes in your overall energy levels or stamina?",
+          "domain": "musculoskeletal",
+          "concept": "other",
+          "target_slot": "other",
+          "grounded": false,
+          "matched_target_id": null
+        },
+        {
+          "rank": 11,
+          "raw": "Are you experiencing any pain or discomfort in any areas other than your feet and right knee?",
+          "domain": "musculoskeletal",
+          "concept": "other",
+          "target_slot": "other",
+          "grounded": false,
+          "matched_target_id": null
+        },
+        {
+          "rank": 12,
+          "raw": "How would you rate your current ability to perform activities you enjoy, like walking or art?",
+          "domain": "musculoskeletal",
+          "concept": "other",
+          "target_slot": "other",
+          "grounded": false,
+          "matched_target_id": null
+        }
+      ],
+      "scores": {
+        "coverage": 0.125,
+        "weighted_coverage": 0.0714,
+        "grounded_precision": 0.0833,
+        "top_5_coverage": 0.0,
+        "top_10_coverage": 0.125,
+        "matched_count": 1,
+        "total_targets": 8,
+        "total_generated": 12
+      },
+      "target_detail": [
+        {
+          "target_id": "124938510_C11_T064",
+          "concept": "foot_pain",
+          "target_slot": "onset_after_walking",
+          "severity": "low",
+          "weight": 1,
+          "hit": false
+        },
+        {
+          "target_id": "124938510_C11_T065",
+          "concept": "foot_pain",
+          "target_slot": "location",
+          "severity": "medium",
+          "weight": 2,
+          "hit": false
+        },
+        {
+          "target_id": "124938510_C11_T066",
+          "concept": "foot_pain",
+          "target_slot": "shoe_response",
+          "severity": "low",
+          "weight": 1,
+          "hit": true,
+          "matched_by": "Do you notice any specific types of shoes or activities that make the foot pain worse?",
+          "matched_rank": 6
+        },
+        {
+          "target_id": "124938510_C11_T067",
+          "concept": "knee_pain",
+          "target_slot": "atraumatic_onset",
+          "severity": "medium",
+          "weight": 2,
+          "hit": false
+        },
+        {
+          "target_id": "124938510_C11_T068",
+          "concept": "knee_pain",
+          "target_slot": "swelling",
+          "severity": "medium",
+          "weight": 2,
+          "hit": false
+        },
+        {
+          "target_id": "124938510_C11_T069",
+          "concept": "knee_pain",
+          "target_slot": "instability_locking_giving_way",
+          "severity": "medium",
+          "weight": 2,
+          "hit": false
+        },
+        {
+          "target_id": "124938510_C11_T070",
+          "concept": "knee_pain",
+          "target_slot": "range_of_motion_limitation",
+          "severity": "medium",
+          "weight": 2,
+          "hit": false
+        },
+        {
+          "target_id": "124938510_C11_T071",
+          "concept": "foot_pain",
+          "target_slot": "walking_trigger",
+          "severity": "medium",
+          "weight": 2,
+          "hit": false
+        }
+      ],
+      "unmatched_questions": [
+        {
+          "rank": 1,
+          "raw": "When is your right knee pain typically at its worst?",
+          "domain": "musculoskeletal",
+          "concept": "other",
+          "target_slot": "other"
+        },
+        {
+          "rank": 2,
+          "raw": "Does anything specific (like sitting, standing, or moving) make your right knee pain better or worse?",
+          "domain": "musculoskeletal",
+          "concept": "other",
+          "target_slot": "other"
+        },
+        {
+          "rank": 3,
+          "raw": "How does the knee pain feel when you are walking or climbing stairs?",
+          "domain": "musculoskeletal",
+          "concept": "other",
+          "target_slot": "other"
+        },
+        {
+          "rank": 4,
+          "raw": "Has the foot pain changed in pattern over the last five months?",
+          "domain": "musculoskeletal",
+          "concept": "other",
+          "target_slot": "other"
+        },
+        {
+          "rank": 5,
+          "raw": "Is the foot pain worse at a specific time of day, such as first thing in the morning?",
+          "domain": "musculoskeletal",
+          "concept": "other",
+          "target_slot": "other"
+        },
+        {
+          "rank": 7,
+          "raw": "How has your activity level (walking/bicycling) changed since the pain started?",
+          "domain": "musculoskeletal",
+          "concept": "other",
+          "target_slot": "other"
+        },
+        {
+          "rank": 8,
+          "raw": "Are you currently experiencing any general symptoms like fatigue, unexplained weight changes, or fever?",
+          "domain": "musculoskeletal",
+          "concept": "other",
+          "target_slot": "other"
+        },
+        {
+          "rank": 9,
+          "raw": "Are you taking all of your current medications (aspirin, atorvastatin, bupropion) exactly as prescribed?",
+          "domain": "musculoskeletal",
+          "concept": "other",
+          "target_slot": "other"
+        },
+        {
+          "rank": 10,
+          "raw": "Have you noticed any changes in your overall energy levels or stamina?",
+          "domain": "musculoskeletal",
+          "concept": "other",
+          "target_slot": "other"
+        },
+        {
+          "rank": 11,
+          "raw": "Are you experiencing any pain or discomfort in any areas other than your feet and right knee?",
+          "domain": "musculoskeletal",
+          "concept": "other",
+          "target_slot": "other"
+        },
+        {
+          "rank": 12,
+          "raw": "How would you rate your current ability to perform activities you enjoy, like walking or art?",
+          "domain": "musculoskeletal",
+          "concept": "other",
+          "target_slot": "other"
+        }
+      ],
+      "gen_meta": {
+        "model": "gemma4:e4b",
+        "raw_output": "1. When is your right knee pain typically at its worst?\n2. Does anything specific (like sitting, standing, or moving) make your right knee pain better or worse?\n3. How does the knee pain feel when you are walking or climbing stairs?\n4. Has the foot pain changed in pattern over the last five months?\n5. Is the foot pain worse at a specific time of day, such as first thing in the morning?\n6. Do you notice any specific types of shoes or activities that make the foot pain worse?\n7. How has your activity level (walking/bicycling) changed since the pain started?\n8. Are you currently experiencing any general symptoms like fatigue, unexplained weight changes, or fever?\n9. Are you taking all of your current medications (aspirin, atorvastatin, bupropion) exactly as prescribed?\n10. Have you noticed any changes in your overall energy levels or stamina?\n11. Are you experiencing any pain or discomfort in any areas other than your feet and right knee?\n12. How would you rate your current ability to perform activities you enjoy, like walking or art?",
+        "input_chars": 7836,
+        "usage": {
+          "prompt_tokens": 2061,
+          "completion_tokens": 907
+        }
+      }
+    },
+    {
+      "case_id": "124938510_C12",
+      "case_domain": "musculoskeletal",
+      "case_name": "Persistent foot and knee pain after podiatry, before definitive recovery",
+      "note_count": 3,
+      "char_count": 19788,
+      "generated_questions": [
+        {
+          "rank": 1,
+          "raw": "Have you noticed any sudden worsening of the pain in either your knee or your feet?",
+          "domain": "musculoskeletal",
+          "concept": "foot_pain",
+          "target_slot": "response_to_conservative_care",
+          "grounded": true,
+          "matched_target_id": "124938510_C12_T075"
+        },
+        {
+          "rank": 2,
+          "raw": "Have you experienced any numbness, tingling, or \"pins and needles\" sensations in your feet or toes?",
+          "domain": "musculoskeletal",
+          "concept": "other",
+          "target_slot": "other",
+          "grounded": false,
+          "matched_target_id": null
+        },
+        {
+          "rank": 3,
+          "raw": "Is the knee pain worse when you are getting up from sitting, or when you are walking downhill?",
+          "domain": "musculoskeletal",
+          "concept": "mobility_limitation",
+          "target_slot": "walking_tolerance",
+          "grounded": true,
+          "matched_target_id": "124938510_C12_T072"
+        },
+        {
+          "rank": 4,
+          "raw": "Does the foot pain feel worse at a specific time of day (e.g., first thing in the morning)?",
+          "domain": "musculoskeletal",
+          "concept": "other",
+          "target_slot": "other",
+          "grounded": false,
+          "matched_target_id": null
+        },
+        {
+          "rank": 5,
+          "raw": "Are there any specific movements, like climbing stairs or going up a ramp, that make the knee pain significantly worse?",
+          "domain": "musculoskeletal",
+          "concept": "other",
+          "target_slot": "other",
+          "grounded": false,
+          "matched_target_id": null
+        },
+        {
+          "rank": 6,
+          "raw": "How has your ability to walk or cycle changed since the pain started?",
+          "domain": "musculoskeletal",
+          "concept": "mobility_limitation",
+          "target_slot": "walking_tolerance",
+          "grounded": true,
+          "matched_target_id": null
+        },
+        {
+          "rank": 7,
+          "raw": "Are you able to wear your new shoes comfortably for extended periods?",
+          "domain": "musculoskeletal",
+          "concept": "other",
+          "target_slot": "other",
+          "grounded": false,
+          "matched_target_id": null
+        },
+        {
+          "rank": 8,
+          "raw": "Do you notice any specific activities or positions that provide immediate relief from the pain?",
+          "domain": "musculoskeletal",
+          "concept": "foot_pain",
+          "target_slot": "response_to_conservative_care",
+          "grounded": true,
+          "matched_target_id": null
+        },
+        {
+          "rank": 9,
+          "raw": "Has the pain in your feet changed location or pattern over the last few days?",
+          "domain": "musculoskeletal",
+          "concept": "other",
+          "target_slot": "other",
+          "grounded": false,
+          "matched_target_id": null
+        },
+        {
+          "rank": 10,
+          "raw": "Are you experiencing any pain or discomfort in any other joints besides your knee and feet?",
+          "domain": "musculoskeletal",
+          "concept": "other",
+          "target_slot": "other",
+          "grounded": false,
+          "matched_target_id": null
+        },
+        {
+          "rank": 11,
+          "raw": "Has the pain level changed at all since you started using the ice, rest, and anti-inflammatories?",
+          "domain": "musculoskeletal",
+          "concept": "foot_pain",
+          "target_slot": "response_to_conservative_care",
+          "grounded": true,
+          "matched_target_id": null
+        },
+        {
+          "rank": 12,
+          "raw": "Are you having any difficulty sleeping due to the pain?",
+          "domain": "musculoskeletal",
+          "concept": "other",
+          "target_slot": "other",
+          "grounded": false,
+          "matched_target_id": null
+        },
+        {
+          "rank": 13,
+          "raw": "Have you noticed any changes in your overall energy levels or general feeling of well-being?",
+          "domain": "musculoskeletal",
+          "concept": "foot_pain",
+          "target_slot": "response_to_conservative_care",
+          "grounded": true,
+          "matched_target_id": null
+        }
+      ],
+      "scores": {
+        "coverage": 0.3333,
+        "weighted_coverage": 0.3333,
+        "grounded_precision": 0.1538,
+        "top_5_coverage": 0.3333,
+        "top_10_coverage": 0.3333,
+        "matched_count": 2,
+        "total_targets": 6,
+        "total_generated": 13
+      },
+      "target_detail": [
+        {
+          "target_id": "124938510_C12_T072",
+          "concept": "mobility_limitation",
+          "target_slot": "walking_tolerance",
+          "severity": "medium",
+          "weight": 2,
+          "hit": true,
+          "matched_by": "Is the knee pain worse when you are getting up from sitting, or when you are walking downhill?",
+          "matched_rank": 3
+        },
+        {
+          "target_id": "124938510_C12_T073",
+          "concept": "work_limitation",
+          "target_slot": "remote_work_need",
+          "severity": "medium",
+          "weight": 2,
+          "hit": false
+        },
+        {
+          "target_id": "124938510_C12_T074",
+          "concept": "foot_pain",
+          "target_slot": "multifocal_pattern",
+          "severity": "medium",
+          "weight": 2,
+          "hit": false
+        },
+        {
+          "target_id": "124938510_C12_T075",
+          "concept": "foot_pain",
+          "target_slot": "response_to_conservative_care",
+          "severity": "low",
+          "weight": 1,
+          "hit": true,
+          "matched_by": "Have you noticed any sudden worsening of the pain in either your knee or your feet?",
+          "matched_rank": 1
+        },
+        {
+          "target_id": "124938510_C12_T076",
+          "concept": "knee_pain",
+          "target_slot": "biking_limitation",
+          "severity": "low",
+          "weight": 1,
+          "hit": false
+        },
+        {
+          "target_id": "124938510_C12_T077",
+          "concept": "knee_pain",
+          "target_slot": "brace_use",
+          "severity": "low",
+          "weight": 1,
+          "hit": false
+        }
+      ],
+      "unmatched_questions": [
+        {
+          "rank": 2,
+          "raw": "Have you experienced any numbness, tingling, or \"pins and needles\" sensations in your feet or toes?",
+          "domain": "musculoskeletal",
+          "concept": "other",
+          "target_slot": "other"
+        },
+        {
+          "rank": 4,
+          "raw": "Does the foot pain feel worse at a specific time of day (e.g., first thing in the morning)?",
+          "domain": "musculoskeletal",
+          "concept": "other",
+          "target_slot": "other"
+        },
+        {
+          "rank": 5,
+          "raw": "Are there any specific movements, like climbing stairs or going up a ramp, that make the knee pain significantly worse?",
+          "domain": "musculoskeletal",
+          "concept": "other",
+          "target_slot": "other"
+        },
+        {
+          "rank": 6,
+          "raw": "How has your ability to walk or cycle changed since the pain started?",
+          "domain": "musculoskeletal",
+          "concept": "mobility_limitation",
+          "target_slot": "walking_tolerance"
+        },
+        {
+          "rank": 7,
+          "raw": "Are you able to wear your new shoes comfortably for extended periods?",
+          "domain": "musculoskeletal",
+          "concept": "other",
+          "target_slot": "other"
+        },
+        {
+          "rank": 8,
+          "raw": "Do you notice any specific activities or positions that provide immediate relief from the pain?",
+          "domain": "musculoskeletal",
+          "concept": "foot_pain",
+          "target_slot": "response_to_conservative_care"
+        },
+        {
+          "rank": 9,
+          "raw": "Has the pain in your feet changed location or pattern over the last few days?",
+          "domain": "musculoskeletal",
+          "concept": "other",
+          "target_slot": "other"
+        },
+        {
+          "rank": 10,
+          "raw": "Are you experiencing any pain or discomfort in any other joints besides your knee and feet?",
+          "domain": "musculoskeletal",
+          "concept": "other",
+          "target_slot": "other"
+        },
+        {
+          "rank": 11,
+          "raw": "Has the pain level changed at all since you started using the ice, rest, and anti-inflammatories?",
+          "domain": "musculoskeletal",
+          "concept": "foot_pain",
+          "target_slot": "response_to_conservative_care"
+        },
+        {
+          "rank": 12,
+          "raw": "Are you having any difficulty sleeping due to the pain?",
+          "domain": "musculoskeletal",
+          "concept": "other",
+          "target_slot": "other"
+        },
+        {
+          "rank": 13,
+          "raw": "Have you noticed any changes in your overall energy levels or general feeling of well-being?",
+          "domain": "musculoskeletal",
+          "concept": "foot_pain",
+          "target_slot": "response_to_conservative_care"
+        }
+      ],
+      "gen_meta": {
+        "model": "gemma4:e4b",
+        "raw_output": "1. Have you noticed any sudden worsening of the pain in either your knee or your feet?\n2. Have you experienced any numbness, tingling, or \"pins and needles\" sensations in your feet or toes?\n3. Is the knee pain worse when you are getting up from sitting, or when you are walking downhill?\n4. Does the foot pain feel worse at a specific time of day (e.g., first thing in the morning)?\n5. Are there any specific movements, like climbing stairs or going up a ramp, that make the knee pain significantly worse?\n6. How has your ability to walk or cycle changed since the pain started?\n7. Are you able to wear your new shoes comfortably for extended periods?\n8. Do you notice any specific activities or positions that provide immediate relief from the pain?\n9. Has the pain in your feet changed location or pattern over the last few days?\n10. Are you experiencing any pain or discomfort in any other joints besides your knee and feet?\n11. Has the pain level changed at all since you started using the ice, rest, and anti-inflammatories?\n12. Are you having any difficulty sleeping due to the pain?\n13. Have you noticed any changes in your overall energy levels or general feeling of well-being?",
+        "input_chars": 19788,
+        "usage": {
+          "prompt_tokens": 5037,
+          "completion_tokens": 1100
+        }
+      }
+    }
+  ]
+}

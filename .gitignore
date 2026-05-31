@@ -54,3 +54,4 @@ Thumbs.db
 .env
 
 data/
+artifacts/crosscures-api/crosscures.db

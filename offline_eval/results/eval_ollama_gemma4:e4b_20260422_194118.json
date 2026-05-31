@@ -1,0 +1,279 @@
+{
+  "run_timestamp": "20260422_194118",
+  "config": {
+    "provider": "ollama",
+    "model": "gemma4:e4b",
+    "normalizer_model": "gemma4:e4b",
+    "temperature": 0.3
+  },
+  "aggregate_scores": {
+    "coverage": 0.0,
+    "weighted_coverage": 0.0,
+    "grounded_precision": 0.0,
+    "top_5_coverage": 0.0,
+    "top_10_coverage": 0.0,
+    "total_cases": 1,
+    "total_targets": 8,
+    "total_matched": 0
+  },
+  "case_results": [
+    {
+      "case_id": "124938510_C01",
+      "case_domain": "gynecology",
+      "case_name": "IUD replacement vs menopause question",
+      "note_count": 1,
+      "char_count": 2321,
+      "generated_questions": [
+        {
+          "rank": 1,
+          "raw": "Since you are having a new IUD, have you noticed any unusual pain, fever, chills, or heavy bleeding since the procedure?",
+          "domain": "gynecology",
+          "concept": "other",
+          "target_slot": "other",
+          "grounded": false,
+          "matched_target_id": null
+        },
+        {
+          "rank": 2,
+          "raw": "When you were able to palpate the IUD strings, were they easy to feel, or did you have trouble locating them?",
+          "domain": "gynecology",
+          "concept": "other",
+          "target_slot": "other",
+          "grounded": false,
+          "matched_target_id": null
+        },
+        {
+          "rank": 3,
+          "raw": "Are you experiencing any cramping or irregular bleeding patterns right now, as we discussed?",
+          "domain": "gynecology",
+          "concept": "other",
+          "target_slot": "other",
+          "grounded": false,
+          "matched_target_id": null
+        },
+        {
+          "rank": 4,
+          "raw": "How are you feeling generally today, compared to when you came in for the procedure?",
+          "domain": "gynecology",
+          "concept": "other",
+          "target_slot": "other",
+          "grounded": false,
+          "matched_target_id": null
+        },
+        {
+          "rank": 5,
+          "raw": "Have you had any changes in your bowel or bladder habits since the IUD insertion?",
+          "domain": "gynecology",
+          "concept": "other",
+          "target_slot": "other",
+          "grounded": false,
+          "matched_target_id": null
+        },
+        {
+          "rank": 6,
+          "raw": "Are you able to remember the specific instructions we gave you regarding caring for the IUD strings?",
+          "domain": "gynecology",
+          "concept": "other",
+          "target_slot": "other",
+          "grounded": false,
+          "matched_target_id": null
+        },
+        {
+          "rank": 7,
+          "raw": "Have you experienced any changes in your usual menstrual cycle patterns, or are you still having no periods?",
+          "domain": "gynecology",
+          "concept": "other",
+          "target_slot": "other",
+          "grounded": false,
+          "matched_target_id": null
+        },
+        {
+          "rank": 8,
+          "raw": "Are there any other symptoms or concerns you'd like to discuss with me today?",
+          "domain": "gynecology",
+          "concept": "other",
+          "target_slot": "other",
+          "grounded": false,
+          "matched_target_id": null
+        },
+        {
+          "rank": 9,
+          "raw": "Do you have any questions for me about the IUD or the follow-up plan?",
+          "domain": "gynecology",
+          "concept": "other",
+          "target_slot": "other",
+          "grounded": false,
+          "matched_target_id": null
+        }
+      ],
+      "scores": {
+        "coverage": 0.0,
+        "weighted_coverage": 0.0,
+        "grounded_precision": 0.0,
+        "top_5_coverage": 0.0,
+        "top_10_coverage": 0.0,
+        "matched_count": 0,
+        "total_targets": 8,
+        "total_generated": 9
+      },
+      "target_detail": [
+        {
+          "target_id": "124938510_C01_T000",
+          "concept": "iud",
+          "target_slot": "menopausal_symptoms",
+          "severity": "low",
+          "weight": 1,
+          "hit": false,
+          "matched_by": null,
+          "matched_rank": null
+        },
+        {
+          "target_id": "124938510_C01_T001",
+          "concept": "iud",
+          "target_slot": "hot_flashes",
+          "severity": "low",
+          "weight": 1,
+          "hit": false,
+          "matched_by": null,
+          "matched_rank": null
+        },
+        {
+          "target_id": "124938510_C01_T002",
+          "concept": "iud",
+          "target_slot": "night_sweats",
+          "severity": "low",
+          "weight": 1,
+          "hit": false,
+          "matched_by": null,
+          "matched_rank": null
+        },
+        {
+          "target_id": "124938510_C01_T003",
+          "concept": "iud",
+          "target_slot": "bleeding",
+          "severity": "low",
+          "weight": 1,
+          "hit": false,
+          "matched_by": null,
+          "matched_rank": null
+        },
+        {
+          "target_id": "124938510_C01_T004",
+          "concept": "iud",
+          "target_slot": "pelvic_pain",
+          "severity": "medium",
+          "weight": 2,
+          "hit": false,
+          "matched_by": null,
+          "matched_rank": null
+        },
+        {
+          "target_id": "124938510_C01_T005",
+          "concept": "iud",
+          "target_slot": "fever_chills",
+          "severity": "medium",
+          "weight": 2,
+          "hit": false,
+          "matched_by": null,
+          "matched_rank": null
+        },
+        {
+          "target_id": "124938510_C01_T006",
+          "concept": "iud",
+          "target_slot": "strings_palpable",
+          "severity": "low",
+          "weight": 1,
+          "hit": false,
+          "matched_by": null,
+          "matched_rank": null
+        },
+        {
+          "target_id": "124938510_C01_T007",
+          "concept": "iud",
+          "target_slot": "device_tolerance",
+          "severity": "low",
+          "weight": 1,
+          "hit": false,
+          "matched_by": null,
+          "matched_rank": null
+        }
+      ],
+      "unmatched_questions": [
+        {
+          "rank": 1,
+          "raw": "Since you are having a new IUD, have you noticed any unusual pain, fever, chills, or heavy bleeding since the procedure?",
+          "domain": "gynecology",
+          "concept": "other",
+          "target_slot": "other"
+        },
+        {
+          "rank": 2,
+          "raw": "When you were able to palpate the IUD strings, were they easy to feel, or did you have trouble locating them?",
+          "domain": "gynecology",
+          "concept": "other",
+          "target_slot": "other"
+        },
+        {
+          "rank": 3,
+          "raw": "Are you experiencing any cramping or irregular bleeding patterns right now, as we discussed?",
+          "domain": "gynecology",
+          "concept": "other",
+          "target_slot": "other"
+        },
+        {
+          "rank": 4,
+          "raw": "How are you feeling generally today, compared to when you came in for the procedure?",
+          "domain": "gynecology",
+          "concept": "other",
+          "target_slot": "other"
+        },
+        {
+          "rank": 5,
+          "raw": "Have you had any changes in your bowel or bladder habits since the IUD insertion?",
+          "domain": "gynecology",
+          "concept": "other",
+          "target_slot": "other"
+        },
+        {
+          "rank": 6,
+          "raw": "Are you able to remember the specific instructions we gave you regarding caring for the IUD strings?",
+          "domain": "gynecology",
+          "concept": "other",
+          "target_slot": "other"
+        },
+        {
+          "rank": 7,
+          "raw": "Have you experienced any changes in your usual menstrual cycle patterns, or are you still having no periods?",
+          "domain": "gynecology",
+          "concept": "other",
+          "target_slot": "other"
+        },
+        {
+          "rank": 8,
+          "raw": "Are there any other symptoms or concerns you'd like to discuss with me today?",
+          "domain": "gynecology",
+          "concept": "other",
+          "target_slot": "other"
+        },
+        {
+          "rank": 9,
+          "raw": "Do you have any questions for me about the IUD or the follow-up plan?",
+          "domain": "gynecology",
+          "concept": "other",
+          "target_slot": "other"
+        }
+      ],
+      "gen_meta": {
+        "model": "gemma4:e4b",
+        "system_prompt": "You are a physician reviewing a patient chart before their next visit.\nBased only on the clinical notes below, generate 10-15 follow-up history\nquestions you would ask this patient, ordered by clinical priority\n(most important first). Ask only questions a patient can answer from\ntheir own experience -- not questions requiring lab results, imaging,\nor clinical examination.",
+        "user_prompt": "--- Note 45966302 | 2018-06-26 | progress notes ---\nGYN Visit  CC: Discuss contraception    Ricky Sidana is a 48 Y female G1P1 here for consultation regarding IUD.  She has a mirena in place. It was placed 5 years ago. She still has ammenorhea from the device.  She wonders if she needs a new one or if she is in menopause  Has had no hotflashes/night sweats.     Jansen history  1 term c-section    GYN history  No history or STDs  Last PAP unsure    Medications - mirena    PMH/PSH/SH reviewed     Visit Vitals  BP 122/78 (Patient site: Right arm, Patient Position: Sitting)   Pulse 106   Ht 4' 11\" (1.499 m)   Wt 178 lb 14.4 oz (81.1 kg)   LMP  (LMP Unknown)   BMI 36.13 kg/m²       We discussed diagnosis of menopause and average age of of menopause  We discussed extended use of mirena for 7 years.     After discussion patient elected to replace IUD at this time      IUD REMOVAL and INSERTION PROCEDURE  - pregnancy test today : negative      A complete discussion of the risks and benefits of IUD use and the details of the insertion procedure was held with the patient. We reviewed the risk of infection within 3 weeks of insertion, cramping and irregular bleeding patterns for first 3-6 months, amenorrhea, risk of uterine perforation at time of insertion and expulsion. All questions were answered.  A consent form was signed.      The patient was placed in low lithotomy.  A bimanual examination was done. A speculum was placed.  The IUD strings were grasped with a ring forceps.  And the IUD was removed and noted to be intact.     Next the cervix was swabbed with Betadine.  A single tooth tenaculum was placed on the anterior cervical lip.   The MIRENA IUD was placed to the uterine fundus without difficulty.  The strings were cut to 2 cms.  The tenaculum was removed and hemostasis was ensured.  The speculum was removed.  The patient tolerated the procedure well.    PLAN:   The patient was asked to contact the clinic for any fever/chills/severe pelvic or abdominal pain or  heavy bleeding. She was instructed in how to palpate her IUD strings.    FOLLOW-UP:  She was asked to follow up in ~6 weeks      (V) Face-to-face time with the patient: 30 minutes. (C) Counseling/Coordination of care: 20 minutes regarding Contracpetion options, IUDs and IUD insertion .    Yasmin Didier MD  06/26/2018        \n\n\nThis patient's primary concern falls under: gynecology.",
+        "raw_output": "{\n  \"questions\": [\n    \"Since you are having a new IUD, have you noticed any unusual pain, fever, chills, or heavy bleeding since the procedure?\",\n    \"When you were able to palpate the IUD strings, were they easy to feel, or did you have trouble locating them?\",\n    \"Are you experiencing any cramping or irregular bleeding patterns right now, as we discussed?\",\n    \"How are you feeling generally today, compared to when you came in for the procedure?\",\n    \"Have you had any changes in your bowel or bladder habits since the IUD insertion?\",\n    \"Are you able to remember the specific instructions we gave you regarding caring for the IUD strings?\",\n    \"Have you experienced any changes in your usual menstrual cycle patterns, or are you still having no periods?\",\n    \"Are there any other symptoms or concerns you'd like to discuss with me today?\",\n    \"Do you have any questions for me about the IUD or the follow-up plan?\"\n  ]\n}",
+        "input_chars": 2321,
+        "usage": {
+          "prompt_tokens": 738,
+          "completion_tokens": 217
+        }
+      }
+    }
+  ]
+}
