@@ -20,6 +20,8 @@ const SECTION_TITLES: Record<string, string> = {
 };
 
 const SOURCE_TYPE_LABELS: Record<string, string> = {
+  patient_profile: "Patient Profile",
+  appointment: "Appointment",
   health_record: "EHR Record", prescription: "Prescription",
   symptom_log: "Patient Check-in", wearable: "Wearable Data",
 };

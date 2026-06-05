@@ -72,7 +72,7 @@ def generate_brief(patient_id: str, appointment_id: str, db: Session, force_rege
 
     # Get recent symptom logs
     since_14d = datetime.utcnow() - timedelta(days=14)
-    sources, source_index_text = _build_source_catalog(patient_id, db, since_14d)
+    sources, source_index_text = _build_source_catalog(patient_id, db, since_14d, appointment=appointment)
     symptom_logs = db.query(SymptomLogDB).filter(
         SymptomLogDB.patient_id == patient_id,
         SymptomLogDB.submitted_at >= since_14d,
@@ -90,7 +90,13 @@ def generate_brief(patient_id: str, appointment_id: str, db: Session, force_rege
                 log_summaries.append(f"[{log.session_date}] " + "; ".join(responses_text[:4]))
         symptom_summary = "\n".join(log_summaries)
 
-    patient_summary_for_physician = _build_patient_summary_for_physician(patient_id, appointment, symptom_logs, db)
+    patient_summary_for_physician = _build_patient_summary_for_physician(
+        patient_id,
+        appointment,
+        symptom_logs,
+        db,
+        sources,
+    )
 
     user_message = f"""Patient context:
 {ctx['patient_summary']}
@@ -132,12 +138,15 @@ Generate the pre-visit brief as structured JSON."""
     except LLMUnavailableError as e:
         print(f"[WARN] Brief generation LLM call failed: {e.cause}")
         sections = {
-            "patient_snapshot": ctx["patient_summary"],
-            "symptom_trends": symptom_summary,
-            "wearable_highlights": ctx["wearable_summary"],
+            "patient_snapshot": _cite_fallback_text(ctx["patient_summary"], sources, ("health_record", "prescription")),
+            "symptom_trends": _cite_recent_symptom_summary(symptom_logs, sources) or symptom_summary,
+            "wearable_highlights": _cite_fallback_text(ctx["wearable_summary"], sources, ("wearable",)),
             "medication_adherence": "Unable to generate — LLM unavailable",
             "patient_concerns": "Unable to generate — LLM unavailable",
-            "suggested_discussion_points": ["Review recent symptom logs", "Check medication adherence"],
+            "suggested_discussion_points": [
+                _cite_fallback_text("Review recent symptom logs", sources, ("symptom_log",)),
+                _cite_fallback_text("Check medication adherence", sources, ("prescription",)),
+            ],
         }
 
     # Normalize multi-ref brackets like [S1, S2] → [S1][S2] in all section text
@@ -153,6 +162,11 @@ Generate the pre-visit brief as structured JSON."""
     else:
         resolved_citations = []
 
+    sections = {
+        "patient_summary": patient_summary_for_physician,
+        **(sections or {}),
+    }
+
     # Auto-collect any [Sn] refs inlined in text but omitted from the LLM citations array
     import re as _re
     seen_refs = {c["ref"] for c in resolved_citations}
@@ -166,11 +180,6 @@ Generate the pre-visit brief as structured JSON."""
                 if key not in seen_refs and key in ref_index:
                     resolved_citations.append(ref_index[key])
                     seen_refs.add(key)
-
-    sections = {
-        "patient_summary": patient_summary_for_physician,
-        **(sections or {}),
-    }
 
     if force_regenerate and existing_brief:
         brief = existing_brief
@@ -254,7 +263,12 @@ def _normalize_sections(sections: dict) -> dict:
     return out
 
 
-def _build_source_catalog(patient_id: str, db: Session, since_14d: datetime) -> tuple:
+def _build_source_catalog(
+    patient_id: str,
+    db: Session,
+    since_14d: datetime,
+    appointment: Optional[AppointmentDB] = None,
+) -> tuple:
     """Build a numbered source catalog for citation anchoring in the LLM prompt.
 
     Returns (sources_list, source_index_text). Each entry in sources_list is a dict
@@ -263,6 +277,32 @@ def _build_source_catalog(patient_id: str, db: Session, since_14d: datetime) -> 
     """
     sources = []
     idx = 1
+
+    profile = db.query(UserDB).filter(UserDB.id == patient_id).first()
+    if profile:
+        ref = f"S{idx}"
+        dob_text = profile.date_of_birth.strftime("%Y-%m-%d") if profile.date_of_birth else "date of birth not on file"
+        sources.append({
+            "ref": ref,
+            "type": "patient_profile",
+            "patient_id": profile.id,
+            "date": "current",
+            "label": f"Patient profile: {profile.full_name or 'Patient'} — DOB {dob_text}",
+        })
+        idx += 1
+
+    if appointment:
+        ref = f"S{idx}"
+        appt_date = appointment.appointment_date.strftime("%Y-%m-%d") if appointment.appointment_date else "unknown date"
+        reason = appointment.reason or "No reason documented"
+        sources.append({
+            "ref": ref,
+            "type": "appointment",
+            "appointment_id": appointment.id,
+            "date": appt_date,
+            "label": f"Appointment record: {appt_date} — {reason}",
+        })
+        idx += 1
 
     # Health records — conditions, notes, labs, meds (up to 30 most recent)
     records = db.query(HealthRecordDB).filter(
@@ -366,8 +406,10 @@ def _build_patient_summary_for_physician(
     appointment: Optional[AppointmentDB],
     symptom_logs: List[SymptomLogDB],
     db: Session,
+    sources: Optional[List[dict]] = None,
 ) -> str:
     """Create a concise physician-facing summary from structured records and recent check-ins."""
+    sources = sources or []
     profile = db.query(UserDB).filter(UserDB.id == patient_id).first()
 
     prescriptions = db.query(PrescriptionDB).filter(
@@ -402,20 +444,84 @@ def _build_patient_summary_for_physician(
     appt_reason = appointment.reason if appointment and appointment.reason else "No reason documented"
     appt_date = appointment.appointment_date.strftime("%Y-%m-%d") if appointment else "Unknown date"
 
-    meds_text = ", ".join([f"{p.medication_name} ({p.dose}, {p.frequency})" for p in prescriptions])
+    refs = _source_ref_lookup(sources)
+    profile_ref = refs["profile"].get(patient_id)
+    appointment_ref = refs["appointment"].get(appointment.id) if appointment else None
+    latest_symptom_ref = refs["symptom_log"].get(symptom_logs[0].id) if symptom_logs else None
+
+    med_items = []
+    for p in prescriptions:
+        med_items.append(f"{p.medication_name} ({p.dose}, {p.frequency}){_ref_token(refs['prescription'].get(p.id))}")
+    meds_text = ", ".join(med_items)
     if not meds_text:
         meds_text = "No active prescriptions on file"
 
-    records_text = "; ".join([r.display_text for r in records if r.display_text])
+    record_items = []
+    for r in records:
+        if r.display_text:
+            record_items.append(f"{r.display_text}{_ref_token(refs['health_record'].get(r.id))}")
+    records_text = "; ".join(record_items)
     if not records_text:
         records_text = "No recent health records available"
 
     symptoms_text = "; ".join(latest_symptom_items) if latest_symptom_items else "No recent symptom details captured"
+    if latest_symptom_items:
+        symptoms_text = f"{symptoms_text}{_ref_token(latest_symptom_ref)}"
 
     return (
-        f"{header_name} ({age_text}). "
-        f"Upcoming visit on {appt_date} for: {appt_reason}. "
+        f"{header_name} ({age_text}){_ref_token(profile_ref)}. "
+        f"Upcoming visit on {appt_date} for: {appt_reason}{_ref_token(appointment_ref)}. "
         f"Recent symptom report: {symptoms_text}. "
         f"Current medications: {meds_text}. "
         f"Recent record highlights: {records_text}."
     )
+
+
+def _ref_token(ref: Optional[str]) -> str:
+    return f" [{ref}]" if ref else ""
+
+
+def _source_ref_lookup(sources: List[dict]) -> dict:
+    refs = {
+        "profile": {},
+        "appointment": {},
+        "health_record": {},
+        "prescription": {},
+        "symptom_log": {},
+    }
+    for source in sources:
+        ref = source.get("ref")
+        if not ref:
+            continue
+        source_type = source.get("type")
+        if source_type == "patient_profile" and source.get("patient_id"):
+            refs["profile"][source["patient_id"]] = ref
+        elif source_type == "appointment" and source.get("appointment_id"):
+            refs["appointment"][source["appointment_id"]] = ref
+        elif source_type == "health_record" and source.get("record_id"):
+            refs["health_record"][source["record_id"]] = ref
+        elif source_type == "prescription" and source.get("prescription_id"):
+            refs["prescription"][source["prescription_id"]] = ref
+        elif source_type == "symptom_log" and source.get("log_id"):
+            refs["symptom_log"][source["log_id"]] = ref
+    return refs
+
+
+def _cite_recent_symptom_summary(symptom_logs: List[SymptomLogDB], sources: List[dict]) -> str:
+    refs = _source_ref_lookup(sources)
+    lines = []
+    for log in symptom_logs:
+        responses_text = []
+        for resp in (log.responses or []):
+            if resp.get("value") is not None:
+                responses_text.append(f"{resp.get('question_id')}: {resp.get('value')}")
+        if responses_text:
+            lines.append(f"[{log.session_date}] " + "; ".join(responses_text[:4]) + _ref_token(refs["symptom_log"].get(log.id)))
+    return "\n".join(lines)
+
+
+def _cite_fallback_text(text: str, sources: List[dict], source_types: tuple) -> str:
+    if not text or text.startswith("No "):
+        return text
+    refs = [s["ref"] for s in sources if s.get("type") in source_types and s.get("ref")]
+    return f"{text}{''.join(f' [{ref}]' for ref in refs[:3])}" if refs else text
