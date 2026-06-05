@@ -55,3 +55,4 @@ Thumbs.db
 
 data/
 artifacts/crosscures-api/crosscures.db
+.pnpm-store/v11/index.db
